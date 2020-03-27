@@ -1,0 +1,6 @@
+include *.md
+include *.py
+include LICENSE
+include MANIFEST.in
+recursive-include github_api *.py
+recursive-include tests *.py
