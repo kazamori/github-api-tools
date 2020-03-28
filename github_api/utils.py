@@ -34,9 +34,9 @@ def offset_weekdays(dt, start=True):
     """
     >>> from datetime import datetime
     >>> offset_weekdays(datetime(2020, 3, 7))
-    2
+    172800
     >>> offset_weekdays(datetime(2020, 3, 8))
-    1
+    86400
     """
     weekday = dt.isoweekday()
     if weekday == WeekEnd.SATURDAY.value:
@@ -50,31 +50,37 @@ def calculate_days(start, end):
     """
     >>> from datetime import datetime
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 4)) # Wed-Wed
-    0
+    0.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 5)) # Wed-Thr
-    1
+    1.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 6)) # Wed-Fri
-    2
+    2.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 7)) # Wed-Sat
-    2
+    2.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 8)) # Wed-Sun
-    2
+    2.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 9)) # Wed-Mon
-    3
+    3.0
     >>> calculate_days(datetime(2020, 3, 7), datetime(2020, 3, 7)) # Sat-Sat
-    0
+    0.0
     >>> calculate_days(datetime(2020, 3, 7), datetime(2020, 3, 8)) # Sat-Sun
-    1
+    1.0
     >>> calculate_days(datetime(2020, 3, 7), datetime(2020, 3, 9)) # Sat-Mon
-    0
+    0.0
     >>> calculate_days(datetime(2020, 3, 7), datetime(2020, 3, 9)) # Sun-Mon
-    0
+    0.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 11)) # Wed-Wed
-    5
+    5.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 18)) # Wed-Wed
-    10
+    10.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 21)) # Wed-Sat
-    13
+    13.0
+    >>> calculate_days(datetime(2020, 3, 4, 9, 15, 0),
+    ...                datetime(2020, 3, 4, 15, 15, 0))
+    0.25
+    >>> calculate_days(datetime(2020, 3, 4, 9, 15, 0),
+    ...                datetime(2020, 3, 5, 15, 15, 0))
+    1.25
     """
     elapsed = end - start
     if elapsed.days == 0:
