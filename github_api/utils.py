@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 
 from .consts import PACKAGE_NAME
 from .consts import WeekEnd
@@ -27,6 +28,7 @@ def is_weekend(dt):
     return False
 
 
+_ONE_WEEK = timedelta(days=7)
 _DAY_SECONDS = (60 * 60 * 24)
 
 
@@ -74,7 +76,7 @@ def calculate_days(start, end):
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 18)) # Wed-Wed
     10.0
     >>> calculate_days(datetime(2020, 3, 4), datetime(2020, 3, 21)) # Wed-Sat
-    13.0
+    12.0
     >>> calculate_days(datetime(2020, 3, 4, 9, 15, 0),
     ...                datetime(2020, 3, 4, 15, 15, 0))
     0.25
@@ -106,10 +108,11 @@ def calculate_days(start, end):
             delta = elapsed.total_seconds() - (2 * _DAY_SECONDS)
             return delta / _DAY_SECONDS  # include weekend
 
-    elif 7 <= elapsed.days:
-        # TODO: rough calculation, implement precisely
-        offset = int(elapsed.days / 7)
-        delta = elapsed.total_seconds() - (offset * 2 * _DAY_SECONDS)
-        return delta / _DAY_SECONDS
+    elif 7 == elapsed.days:
+        return 5.0
+
+    elif 7 < elapsed.days:
+        nextweek_date = start + _ONE_WEEK
+        return 5.0 + calculate_days(nextweek_date, end)
 
     return elapsed.total_seconds() / _DAY_SECONDS
