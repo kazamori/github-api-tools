@@ -32,6 +32,9 @@ class Repository:
         log.debug(f' - reviews: {pr.reviews}')
 
     def set_elapsed_days(self, pr):
+        if pr.closed_at is None:
+            pr.elapsed_days = -1.0
+            return
         pr.elapsed_days = calculate_days(pr.created_at,  pr.closed_at)
         log.debug(f' - elapsed_days: {pr.elapsed_days}')
         log.debug(f' - merged: {pr.merged}')
@@ -55,10 +58,11 @@ class Repository:
         log.info(f'          : {repo.html_url}')
         for pr in repo.get_pulls(state=GithubState.ALL.value):
             log.info(f'#{pr.number}: {pr.title}')
-            if pr.assignee is None:
-                continue
+            assignee = pr.assignee
+            if assignee is None:
+                assignee = pr.user.login
 
-            if user.login == pr.assignee.login:
+            if user.login == assignee:
                 log.debug(f' - comments: {pr.comments}')
                 self.set_changes(pr)
                 self.set_labels(pr)
