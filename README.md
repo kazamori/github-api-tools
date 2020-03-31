@@ -13,14 +13,13 @@ $ python setup.py develop
 Confirm `gh-cli` command show help.
 
 ```bash
-$ gh-cli --help
 usage: gh-cli [-h] [--disable-cache]
               [--repository [REPOSITORIES [REPOSITORIES ...]]] [--style STYLE]
               [--verbose]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --disable-cache       set verbose mode
+  --disable-cache       disable cache
   --repository [REPOSITORIES [REPOSITORIES ...]]
                         set repositories
   --style STYLE         set figure style for seaborn

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from github import Github
 
-from ..core.repository import get_repository_info
+from ..core.repository import Repository
 from ..core.writer import create_filename
 from ..core.writer import output_csv
 from ..utils import log
@@ -22,7 +22,7 @@ def parse_argument():
 
     parser.add_argument(
         '--disable-cache', action='store_false', dest='enable_cache',
-        help='set verbose mode'
+        help='disable cache'
     )
 
     parser.add_argument(
@@ -60,8 +60,8 @@ def get_csv_path(args, repo_name, gh):
         log.info(f'use existent {path}')
         return path
 
-    repo = get_repository_info(repo_name, gh)
-    return output_csv(args, repo, filename)
+    with Repository(gh, repo_name) as repo:
+        return output_csv(args, repo, filename)
 
 
 def main():
