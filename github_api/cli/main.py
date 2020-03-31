@@ -16,6 +16,8 @@ def parse_argument():
     parser.set_defaults(
         enable_cache=True,
         repositories=[],
+        scatter_plot_col='labels_',
+        scatter_plot_col_wrap=2,
         style='whitegrid',
         verbose=False,
     )

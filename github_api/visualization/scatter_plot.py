@@ -2,6 +2,7 @@ from functools import lru_cache
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import seaborn as sns
 
 from ..utils import log
@@ -19,9 +20,12 @@ class ScatterPlot:
         self._set_changes_bins()
 
     def _set_changes_bins(self):
-        step = int(self.delta / self.bins_num)
-        bins = range(self.min_changes, self.max_changes, step)
-        arr = np.array(bins)
+        step = self.bins_step
+        if step == 1:
+            arr = np.array([self.min_changes, self.max_changes + 1])
+        else:
+            bins = range(self.min_changes, self.max_changes, step)
+            arr = np.array(bins)
         indexes = arr.searchsorted(self.df['changes'], side='right') - 1
         self.df['changes_bins'] = [arr[i] for i in indexes]
         log.debug(f"changes_bins:\n{self.df['changes_bins']}")
@@ -38,6 +42,14 @@ class ScatterPlot:
             return 32
         else:
             return 64
+
+    @property
+    @lru_cache(1)
+    def bins_step(self):
+        step = int(self.delta / self.bins_num)
+        if step == 0:
+            return 1
+        return step
 
     @property
     @lru_cache(1)
@@ -58,11 +70,17 @@ class ScatterPlot:
         return dict(sizes)
 
     def show(self):
+        col = self.args.scatter_plot_col
+        col_wrap = self.args.scatter_plot_col_wrap
+        if len(self.df.labels_) == 1 and pd.isnull(self.df.labels_[0]):
+            col = None
+            col_wrap = None
+
         with sns.axes_style(self.args.style):
             sns.relplot(
                 alpha=.7,
-                col='labels_',
-                col_wrap=2,
+                col=col,
+                col_wrap=col_wrap,
                 data=self.df,
                 height=5,
                 hue='labels_',
