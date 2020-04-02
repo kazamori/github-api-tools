@@ -3,6 +3,10 @@ from enum import Enum
 PACKAGE_NAME = 'github-api-tools'
 
 
+class Plot(Enum):
+    SCATTER = 'scatter'
+
+
 class WeekEnd(Enum):
     SATURDAY = 6
     SUNDAY = 7

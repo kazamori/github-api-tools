@@ -1,27 +1,41 @@
 import argparse
 import logging
+import sys
 from pathlib import Path
 
 from github import Github
 
 from .. import cli
+from ..consts import Plot
 from ..core.repository import Repository
 from ..core.writer import create_filename
 from ..core.writer import output_csv
 from ..utils import log
 from ..visualization.chart import output_chart
+from .scatter_option import parse_scatter_argument
+
+
+def has_plot_option(argv):
+    for _, plot in Plot.__members__.items():
+        if plot.value in argv:
+            return True
+    return False
 
 
 def parse_argument():
     parser = argparse.ArgumentParser()
     parser.set_defaults(
         enable_cache=True,
+        nop=False,
+        plot=Plot.SCATTER.value,
         repositories=[],
-        scatter_plot_col='labels_',
-        scatter_plot_col_wrap=2,
-        style='whitegrid',
         verbose=False,
         version=cli.__version__,
+
+        # common seaborn parameters
+        height=5,
+        palette='muted',
+        style='whitegrid',
     )
 
     parser.add_argument(
@@ -30,13 +44,13 @@ def parse_argument():
     )
 
     parser.add_argument(
-        '--repository', nargs='*', dest='repositories',
-        help='set repositories'
+        '--nop', action='store_true',
+        help='use as a separator for option handling of positional argument'
     )
 
     parser.add_argument(
-        '--style', action='store',
-        help='set figure style for seaborn'
+        '--repository', nargs='*', dest='repositories',
+        help='set repositories'
     )
 
     parser.add_argument(
@@ -49,7 +63,30 @@ def parse_argument():
         help='show version'
     )
 
-    args = parser.parse_args()
+    # common seaborn parameters
+    parser.add_argument(
+        '--height', action='store', type=int,
+        help='set height parameter for seaborn plot',
+    )
+
+    parser.add_argument(
+        '--palette', action='store',
+        help='set palette parameter for seaborn plot'
+    )
+
+    parser.add_argument(
+        '--style', action='store',
+        help='set style parameter for seaborn plot'
+    )
+
+    subparsers = parser.add_subparsers(dest='plot')
+    parse_scatter_argument(subparsers)
+
+    argv = sys.argv[1:]
+    if not has_plot_option(argv):
+        argv.extend(['--nop', Plot.SCATTER.value])
+
+    args = parser.parse_args(argv)
     return args
 
 

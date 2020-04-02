@@ -70,23 +70,23 @@ class ScatterPlot:
         return dict(sizes)
 
     def show(self):
-        col = self.args.scatter_plot_col
-        col_wrap = self.args.scatter_plot_col_wrap
+        col = self.args.col
+        col_wrap = self.args.col_wrap
         if len(self.df.labels_) == 1 and pd.isnull(self.df.labels_[0]):
             col = None
             col_wrap = None
 
         with sns.axes_style(self.args.style):
             sns.relplot(
-                alpha=.7,
+                alpha=self.args.alpha,
                 col=col,
                 col_wrap=col_wrap,
                 data=self.df,
-                height=5,
+                height=self.args.height,
                 hue='labels_',
                 kind='scatter',
                 legend='full',
-                palette='muted',
+                palette=self.args.palette,
                 size='changes_bins',
                 sizes=self.sizes,
                 x='elapsed_days',

@@ -13,17 +13,27 @@ $ python setup.py develop
 Confirm `gh-cli` command show help.
 
 ```bash
-usage: gh-cli [-h] [--disable-cache]
-              [--repository [REPOSITORIES [REPOSITORIES ...]]] [--style STYLE]
-              [--verbose]
+usage: gh-cli [-h] [--disable-cache] [--nop]
+              [--repository [REPOSITORIES [REPOSITORIES ...]]] [--verbose]
+              [--version] [--height HEIGHT] [--palette PALETTE]
+              [--style STYLE]
+              {scatter} ...
+
+positional arguments:
+  {scatter}
 
 optional arguments:
   -h, --help            show this help message and exit
   --disable-cache       disable cache
+  --nop                 use as a separator for option handling of positional
+                        argument
   --repository [REPOSITORIES [REPOSITORIES ...]]
                         set repositories
-  --style STYLE         set figure style for seaborn
   --verbose             set verbose mode
+  --version             show version
+  --height HEIGHT       set height parameter for seaborn plot
+  --palette PALETTE     set palette parameter for seaborn plot
+  --style STYLE         set style parameter for seaborn plot
 ```
 
 ## How to run
@@ -73,9 +83,24 @@ $ vviewer your-repository.csv
 ------------------------------------------------------------------------
 ```
 
-You can see a figure created by your-repository.csv.
+### Scatter plot
+
+You can see a scatter plot created by your-repository.csv by default.
 
 ![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-pr-stats1.png)
+
+`scatter` is like a sub command and takes several options to customize the plot.
+
+```bash
+$ gh-cli scatter --help
+usage: gh-cli scatter [-h] [--alpha ALPHA] [--col COL] [--col_wrap COL_WRAP]
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --alpha ALPHA        set alpha parameter for relplot
+  --col COL            set col parameter for relplot
+  --col_wrap COL_WRAP  set col_wrap parameter for relplot
+```
 
 ## Reference
 
