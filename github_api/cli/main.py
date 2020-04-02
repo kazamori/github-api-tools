@@ -4,6 +4,7 @@ from pathlib import Path
 
 from github import Github
 
+from .. import cli
 from ..core.repository import Repository
 from ..core.writer import create_filename
 from ..core.writer import output_csv
@@ -20,6 +21,7 @@ def parse_argument():
         scatter_plot_col_wrap=2,
         style='whitegrid',
         verbose=False,
+        version=cli.__version__,
     )
 
     parser.add_argument(
@@ -40,6 +42,11 @@ def parse_argument():
     parser.add_argument(
         '--verbose', action='store_true',
         help='set verbose mode'
+    )
+
+    parser.add_argument(
+        '--version', action='version', version=f'%(prog)s {cli.__version__}',
+        help='show version'
     )
 
     args = parser.parse_args()
