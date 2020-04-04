@@ -17,6 +17,8 @@ class BoxPlot(BasePlot):
 
         figsize = (self.args.width, self.args.height)
         fig, ax = plt.subplots(2, 1, figsize=figsize)
+        ax[0].set_title(self.title)
+
         sns.boxplot(
             ax=ax[0],
             data=self.df,

@@ -21,6 +21,7 @@ class ViolinPlot(BasePlot):
 
         figsize = (self.args.width, self.args.height)
         fig, ax = plt.subplots(2, 1, figsize=figsize)
+        ax[0].set_title(self.title)
 
         sns.violinplot(
             ax=ax[0],
