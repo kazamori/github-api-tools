@@ -4,6 +4,7 @@ PACKAGE_NAME = 'github-api-tools'
 
 
 class Plot(Enum):
+    BOX = 'box'
     SCATTER = 'scatter'
 
 

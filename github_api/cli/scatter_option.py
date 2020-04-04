@@ -7,6 +7,9 @@ def parse_scatter_argument(subparsers):
         alpha=.7,
         col='labels_',
         col_wrap=2,
+        height=5,
+        palette='muted',
+        style='whitegrid',
     )
 
     parser.add_argument(
@@ -22,4 +25,9 @@ def parse_scatter_argument(subparsers):
     parser.add_argument(
         '--col_wrap', action='store', type=int,
         help='set col_wrap parameter for relplot'
+    )
+
+    parser.add_argument(
+        '--height', action='store', type=int,
+        help='set height parameter for seaborn plot',
     )

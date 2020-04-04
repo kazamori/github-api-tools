@@ -12,6 +12,7 @@ from ..core.writer import create_filename
 from ..core.writer import output_csv
 from ..utils import log
 from ..visualization.chart import output_chart
+from .box_option import parse_box_argument
 from .scatter_option import parse_scatter_argument
 
 
@@ -31,11 +32,6 @@ def parse_argument():
         repositories=[],
         verbose=False,
         version=cli.__version__,
-
-        # common seaborn parameters
-        height=5,
-        palette='muted',
-        style='whitegrid',
     )
 
     parser.add_argument(
@@ -65,11 +61,6 @@ def parse_argument():
 
     # common seaborn parameters
     parser.add_argument(
-        '--height', action='store', type=int,
-        help='set height parameter for seaborn plot',
-    )
-
-    parser.add_argument(
         '--palette', action='store',
         help='set palette parameter for seaborn plot'
     )
@@ -80,6 +71,7 @@ def parse_argument():
     )
 
     subparsers = parser.add_subparsers(dest='plot')
+    parse_box_argument(subparsers)
     parse_scatter_argument(subparsers)
 
     argv = sys.argv[1:]

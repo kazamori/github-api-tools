@@ -13,14 +13,14 @@ $ python setup.py develop
 Confirm `gh-cli` command show help.
 
 ```bash
+$ gh-cli --help
 usage: gh-cli [-h] [--disable-cache] [--nop]
               [--repository [REPOSITORIES [REPOSITORIES ...]]] [--verbose]
-              [--version] [--height HEIGHT] [--palette PALETTE]
-              [--style STYLE]
-              {scatter} ...
+              [--version] [--palette PALETTE] [--style STYLE]
+              {box,scatter} ...
 
 positional arguments:
-  {scatter}
+  {box,scatter}
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -31,7 +31,6 @@ optional arguments:
                         set repositories
   --verbose             set verbose mode
   --version             show version
-  --height HEIGHT       set height parameter for seaborn plot
   --palette PALETTE     set palette parameter for seaborn plot
   --style STYLE         set style parameter for seaborn plot
 ```
@@ -87,19 +86,37 @@ $ vviewer your-repository.csv
 
 You can see a scatter plot created by your-repository.csv by default.
 
-![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-scatter-pr-stats1.png)
 
 `scatter` is like a sub command and takes several options to customize the plot.
 
 ```bash
 $ gh-cli scatter --help
 usage: gh-cli scatter [-h] [--alpha ALPHA] [--col COL] [--col_wrap COL_WRAP]
+                      [--height HEIGHT]
 
 optional arguments:
   -h, --help           show this help message and exit
   --alpha ALPHA        set alpha parameter for relplot
   --col COL            set col parameter for relplot
   --col_wrap COL_WRAP  set col_wrap parameter for relplot
+  --height HEIGHT      set height parameter for seaborn plot
+```
+
+### Box plot
+
+![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-box-pr-stats1.png)
+
+`box` is like a sub command and takes several options to customize the plot.
+
+```bash
+$ gh-cli box --help
+usage: gh-cli box [-h] [--height HEIGHT] [--width WIDTH]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --height HEIGHT  set height parameter for subplots
+  --width WIDTH    set width parameter for subplots
 ```
 
 ## Reference
