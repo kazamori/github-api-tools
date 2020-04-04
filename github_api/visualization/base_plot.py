@@ -1,6 +1,7 @@
 from functools import lru_cache
 
 import numpy as np
+import pandas as pd
 
 from ..utils import log
 
@@ -60,3 +61,15 @@ class BasePlot:
         sizes = [(i, (i * 0.1) + 40) for i in self.df['changes_bins']]
         log.debug(f'changes_sizes: {sizes}')
         return dict(sizes)
+
+    @lru_cache(1)
+    def has_labels(self):
+        unique_labels = pd.unique(self.df.labels_)
+        return not (len(unique_labels) == 1 and pd.isnull(unique_labels[0]))
+
+    @property
+    @lru_cache(1)
+    def hue_labels(self):
+        if self.has_labels():
+            return 'labels_'
+        return None

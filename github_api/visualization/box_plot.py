@@ -20,7 +20,7 @@ class BoxPlot(BasePlot):
         sns.boxplot(
             ax=ax[0],
             data=self.df,
-            hue='labels_',
+            hue=self.hue_labels,
             x='changes_bins',
             y='elapsed_days')
         ax[0].axes.get_xaxis().set_visible(False)
@@ -28,7 +28,7 @@ class BoxPlot(BasePlot):
         sns.boxplot(
             ax=ax[1],
             data=self.df,
-            hue='labels_',
+            hue=self.hue_labels,
             x='changes_bins',
             y='elapsed_days_of_first_comment')
 

@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 import seaborn as sns
 
 from .base_plot import BasePlot
@@ -15,7 +14,8 @@ class ScatterPlot(BasePlot):
     def show(self):
         col = self.args.col
         col_wrap = self.args.col_wrap
-        if len(self.df.labels_) == 1 and pd.isnull(self.df.labels_[0]):
+
+        if not self.has_labels():
             col = None
             col_wrap = None
 
@@ -26,7 +26,7 @@ class ScatterPlot(BasePlot):
                 col_wrap=col_wrap,
                 data=self.df,
                 height=self.args.height,
-                hue='labels_',
+                hue=self.hue_labels,
                 kind='scatter',
                 legend='full',
                 palette=self.args.palette,

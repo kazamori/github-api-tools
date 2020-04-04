@@ -25,7 +25,7 @@ class ViolinPlot(BasePlot):
         sns.violinplot(
             ax=ax[0],
             data=self.df,
-            hue='labels_',
+            hue=self.hue_labels,
             inner=self.args.inner,
             x='changes_bins',
             y='elapsed_days')
@@ -35,7 +35,7 @@ class ViolinPlot(BasePlot):
         sns.violinplot(
             ax=ax[1],
             data=self.df,
-            hue='labels_',
+            hue=self.hue_labels,
             inner=self.args.inner,
             x='changes_bins',
             y='elapsed_days_of_first_comment')
