@@ -31,6 +31,7 @@ def parse_argument():
         nop=False,
         plot=Plot.SCATTER.value,
         repositories=[],
+        user=None,
         verbose=False,
         version=cli.__version__,
     )
@@ -48,6 +49,11 @@ def parse_argument():
     parser.add_argument(
         '--repository', nargs='*', dest='repositories',
         help='set repositories'
+    )
+
+    parser.add_argument(
+        '--user', action='store',
+        help='set user to filter assignee of pull request'
     )
 
     parser.add_argument(
@@ -100,7 +106,7 @@ def get_csv_path(args, repo_name, gh):
         log.info(f'use existent {path}')
         return path
 
-    with Repository(gh, repo_name) as repo:
+    with Repository(args, gh, repo_name) as repo:
         return output_csv(args, repo, filename)
 
 
@@ -117,6 +123,9 @@ def main():
     if args.repositories is None:
         show_owner_repository(gh)
         return
+
+    if args.user is None:
+        args.user = gh.get_user().login
 
     for name in args.repositories:
         path = get_csv_path(args, name, gh)

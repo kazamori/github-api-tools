@@ -15,9 +15,9 @@ Confirm `gh-cli` command show help.
 ```bash
 $ gh-cli --help
 usage: gh-cli [-h] [--disable-cache] [--nop]
-              [--repository [REPOSITORIES [REPOSITORIES ...]]] [--verbose]
-              [--version] [--palette PALETTE] [--style STYLE]
-              {box,scatter} ...
+              [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
+              [--verbose] [--version] [--palette PALETTE] [--style STYLE]
+              {box,scatter,violin} ...
 
 positional arguments:
   {box,scatter,violin}
@@ -29,6 +29,7 @@ optional arguments:
                         argument
   --repository [REPOSITORIES [REPOSITORIES ...]]
                         set repositories
+  --user USER           set user to filter assignee of pull request
   --verbose             set verbose mode
   --version             show version
   --palette PALETTE     set palette parameter for seaborn plot
