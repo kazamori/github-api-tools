@@ -15,7 +15,7 @@ class ScatterPlot(BasePlot):
         col = self.args.col
         col_wrap = self.args.col_wrap
 
-        if not (self.has_labels() and self.can_allocate_labels()):
+        if not self.can_allocate_labels():
             col = None
             col_wrap = None
 
