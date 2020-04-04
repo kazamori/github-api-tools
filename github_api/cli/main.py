@@ -14,6 +14,7 @@ from ..utils import log
 from ..visualization.chart import output_chart
 from .box_option import parse_box_argument
 from .scatter_option import parse_scatter_argument
+from .violin_option import parse_violin_argument
 
 
 def has_plot_option(argv):
@@ -73,6 +74,7 @@ def parse_argument():
     subparsers = parser.add_subparsers(dest='plot')
     parse_box_argument(subparsers)
     parse_scatter_argument(subparsers)
+    parse_violin_argument(subparsers)
 
     argv = sys.argv[1:]
     if not has_plot_option(argv):

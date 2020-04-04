@@ -20,7 +20,7 @@ usage: gh-cli [-h] [--disable-cache] [--nop]
               {box,scatter} ...
 
 positional arguments:
-  {box,scatter}
+  {box,scatter,violin}
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -116,6 +116,25 @@ usage: gh-cli box [-h] [--height HEIGHT] [--width WIDTH]
 optional arguments:
   -h, --help       show this help message and exit
   --height HEIGHT  set height parameter for subplots
+  --width WIDTH    set width parameter for subplots
+```
+
+### Violin plot
+
+![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-violin-pr-stats1.png)
+
+`violin` is like a sub command and takes several options to customize the plot.
+
+```bash
+$ gh-cli violin --help
+usage: gh-cli violin [-h] [--height HEIGHT] [--inner INNER] [--loc LOC]
+                     [--width WIDTH]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --height HEIGHT  set height parameter for subplots
+  --inner INNER    set inner parameter for violinplot
+  --loc LOC        set loc parameter for legend
   --width WIDTH    set width parameter for subplots
 ```
 

@@ -2,6 +2,7 @@ import pandas as pd
 
 from . import box_plot
 from . import scatter_plot
+from . import violin_plot
 from ..consts import Plot
 from ..utils import log
 
@@ -14,5 +15,7 @@ def output_chart(args, path):
         box_plot.create_changes_and_elapsed_days(args, df)
     elif args.plot == Plot.SCATTER.value:
         scatter_plot.create_changes_and_elapsed_days(args, df)
+    elif args.plot == Plot.VIOLIN.value:
+        violin_plot.create_changes_and_elapsed_days(args, df)
     else:
         raise NotImplementedError(f'Unsupported plot: {args.plot}')

@@ -1,10 +1,7 @@
-from functools import lru_cache
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-from ..utils import log
 from .base_plot import BasePlot
 
 

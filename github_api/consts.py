@@ -6,6 +6,7 @@ PACKAGE_NAME = 'github-api-tools'
 class Plot(Enum):
     BOX = 'box'
     SCATTER = 'scatter'
+    VIOLIN = 'violin'
 
 
 class WeekEnd(Enum):
