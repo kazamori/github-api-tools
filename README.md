@@ -142,3 +142,4 @@ optional arguments:
 
 * https://developer.github.com/v3/
 * https://github.com/PyGithub/PyGithub
+* https://seaborn.pydata.org/
