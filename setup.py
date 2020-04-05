@@ -49,7 +49,7 @@ setup(
     tests_require=[
         'tox', 'pytest', 'pytest-flake8',
     ],
-    entry_points = {
+    entry_points={
         'console_scripts': [
             'gh-cli=github_api.cli.main:main',
         ],
