@@ -29,7 +29,8 @@ def parse_argument():
     parser.set_defaults(
         enable_cache=True,
         nop=False,
-        plot=Plot.SCATTER.value,
+        _plot=Plot.SCATTER.value,
+        plot=None,
         repositories=[],
         user=None,
         verbose=False,
@@ -77,7 +78,7 @@ def parse_argument():
         help='set style parameter for seaborn plot'
     )
 
-    subparsers = parser.add_subparsers(dest='plot')
+    subparsers = parser.add_subparsers(dest='_plot')
     parse_box_argument(subparsers)
     parse_scatter_argument(subparsers)
     parse_violin_argument(subparsers)
@@ -87,6 +88,7 @@ def parse_argument():
         argv.extend(['--nop', Plot.SCATTER.value])
 
     args = parser.parse_args(argv)
+    args.plot = Plot.from_str(args._plot)
     return args
 
 
