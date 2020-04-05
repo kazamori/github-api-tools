@@ -1,3 +1,4 @@
+import math
 import re
 from functools import lru_cache
 
@@ -12,7 +13,7 @@ _RE_REPOSITORY = re.compile(
 
 class BasePlot:
 
-    MAX_UNIQUE_LABELS = 32
+    MAX_UNIQUE_LABELS = 16
 
     def _set_changes_bins(self):
         step = self.changes_bins_step
@@ -23,6 +24,7 @@ class BasePlot:
             arr = np.array(bins)
         indexes = arr.searchsorted(self.df['changes'], side='right') - 1
         self.df['changes_bins'] = [arr[i] for i in indexes]
+        self._changes_bins_indexes = indexes
         log.debug(f"unique bins: {len(pd.unique(self.df['changes_bins']))}")
 
     @property
@@ -34,14 +36,23 @@ class BasePlot:
     @lru_cache(1)
     def changes_bins_num(self):
         # TODO: consider later
-        if self.changes_delta < 100:
-            return 8
-        elif self.changes_delta < 2000:
-            return 16
-        elif self.changes_delta < 5000:
-            return 32
+        if self.changes_delta < 500:
+            return 7
+        elif self.changes_delta < 3000:
+            return 15
         else:
-            return 64
+            return 31
+
+    _BINS_NUM_FACTOR = 128
+
+    @property
+    @lru_cache(1)
+    def changes_bins_sizes(self):
+        bins_num = self.changes_bins_num + 1
+        value = int(self._BINS_NUM_FACTOR / bins_num)
+        sizes = [i + value for i in range(bins_num)]
+        log.debug(f'changes_bins_sizes: {sizes}')
+        return sizes
 
     @property
     @lru_cache(1)
@@ -64,8 +75,15 @@ class BasePlot:
     @property
     @lru_cache(1)
     def changes_sizes(self):
-        sizes = [(i, (i * 0.1) + 40) for i in self.df['changes_bins']]
-        log.debug(f'changes_sizes: {sizes}')
+        def calculate_size(i, changes):
+            idx = self._changes_bins_indexes[i]
+            size = self.changes_bins_sizes[idx]
+            if changes > 1:
+                size += math.log2(changes)
+            return size
+
+        sizes = [(changes, calculate_size(i, changes))
+                 for i, changes in enumerate(self.df['changes_bins'])]
         return dict(sizes)
 
     @property

@@ -46,50 +46,52 @@ Set Personal access tokens. You can get from https://github.com/settings/tokens 
 $ export GITHUB_API_TOKEN="********"
 ```
 
-Run `gh-cli` command.
+Run `gh-cli` command with repository and user.
 
 ```bash
-(github-api) $ gh-cli --repository organization/your-repository
-2020-03-28 21:21:44,479 INFO Repository: your-repository
-2020-03-28 21:21:44,479 INFO           : https://github.com/organization/repo.git
-2020-03-28 21:21:45,862 INFO #61: Xxx
-2020-03-28 21:21:47,437 INFO #60: Yyy
-2020-03-28 21:21:48,957 INFO #59: Zzz
+$ gh-cli --repository mwaskom/seaborn --user mwaskom
+2020-04-05 12:48:13,095 INFO Repository: seaborn
+2020-04-05 12:48:13,095 INFO           : https://github.com/mwaskom/seaborn
+2020-04-05 12:48:14,299 INFO #2010: Add optional argument showfliers for boxenplot
+2020-04-05 12:48:14,299 INFO #2000: Avoid floating point error with maximum husl sat/lum
+2020-04-05 12:48:15,818 INFO #1999: Fix `add_legend` to always populate `_legend`
 ...
 ```
 
-`gh-cli` creates a CSV file about Pull Requests created by yourself.
+`gh-cli` creates a CSV file as [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/master/example/csv-files/seaborn.csv) about Pull Requests created by a user.
 
-[vviewer](https://github.com/t2y/vviewer) show values with columns every one line vertically. It's useful to check data.
+[vviewer](https://github.com/t2y/vviewer) show values with columns every one line vertically. It's useful to check data for a quick look.
 
 ```bash
-$ vviewer your-repository.csv
-...
+$ vviewer --quoting all example/csv-files/seaborn.csv
+
+##### line no: 1
 ------------------------------------------------------------------------
-001: additions                    : 467
-002: changed_files                : 32
-003: changes                      : 266
-004: closed_at                    : 2020-03-27 07:06:34
-005: comments                     : 6
-006: created_at                   : 2020-03-25 06:53:42
-007: deletions                    : 201
-008: elapsed_days                 : 2.008935185185185
-009: elapsed_days_of_first_comment: 1.7815972222222223
-010: html_url                     : https://github.com/organization/your-repository/pull/60
-011: labels_                      : refactoring
+001: additions                    : 11
+002: changed_files                : 2
+003: changes                      : 8
+004: closed_at                    : 2020-03-17 22:44:00
+005: comments                     : 1
+006: created_at                   : 2020-03-17 22:14:39
+007: deletions                    : 3
+008: elapsed_days                 : 0.020381944444444446
+009: elapsed_days_of_first_comment: -1.0
+010: html_url                     : https://github.com/mwaskom/seaborn/pull/2000
+011: labels_                      :
 012: merged                       : True
-013: number                       : 60
-014: reviews                      : other-user
-015: title                        : Refactor something
-016: user.login                   : t2y
+013: number                       : 2000
+014: reviews                      :
+015: title                        : Avoid floating point error with maximum husl sat/lum
+016: user.login                   : mwaskom
 ------------------------------------------------------------------------
+Enter to next line, or q (quit):
 ```
 
 ### Scatter plot
 
-You can see a scatter plot created by your-repository.csv by default.
+You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/master/example/csv-files/seaborn.csv) by default.
 
-![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-scatter-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-seaborn-scatter-pr-stats1.png)
 
 `scatter` is like a sub command and takes several options to customize the plot.
 

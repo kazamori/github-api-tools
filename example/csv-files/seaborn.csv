@@ -1,0 +1,220 @@
+additions,changed_files,changes,closed_at,comments,created_at,deletions,elapsed_days,elapsed_days_of_first_comment,html_url,labels_,merged,number,reviews,title,user.login
+11,2,8,2020-03-17 22:44:00,1,2020-03-17 22:14:39,3,0.020381944444444446,-1.0,https://github.com/mwaskom/seaborn/pull/2000,,True,2000,,Avoid floating point error with maximum husl sat/lum,mwaskom
+18,3,16,2020-03-17 21:38:21,1,2020-03-14 14:07:29,2,1.3131018518518518,-1.0,https://github.com/mwaskom/seaborn/pull/1991,,True,1991,,Avoid error in despine when axis has matplotlib categories,mwaskom
+16,2,0,2020-02-27 15:38:51,1,2020-02-26 12:50:10,16,1.1171412037037036,-1.0,https://github.com/mwaskom/seaborn/pull/1973,,True,1973,,Add deprecation notice for sig_stars,mwaskom
+17,3,15,2020-02-22 22:29:03,1,2020-02-22 17:17:13,2,0.21655092592592592,-1.0,https://github.com/mwaskom/seaborn/pull/1969,,True,1969,MaozGelbart,"Don't fail in regplot on singletons, don't fit regression either",mwaskom
+3,1,0,2020-02-22 17:48:27,1,2020-02-22 17:00:47,3,0.033101851851851855,-1.0,https://github.com/mwaskom/seaborn/pull/1968,,True,1968,,Use numpy's indexing dtype in bootstrap,mwaskom
+1,8,-507,2020-01-22 20:03:52,1,2020-01-22 18:35:55,508,0.06107638888888889,-1.0,https://github.com/mwaskom/seaborn/pull/1943,,True,1943,,Remove previously deprecated modules,mwaskom
+52,21,-931,2020-01-22 20:02:04,1,2020-01-22 03:57:07,983,0.6701041666666666,-1.0,https://github.com/mwaskom/seaborn/pull/1941,,True,1941,MaozGelbart,Drop Python 2 support,mwaskom
+50,2,19,2020-01-22 01:10:10,1,2020-01-21 19:42:11,31,0.2277662037037037,-1.0,https://github.com/mwaskom/seaborn/pull/1939,,True,1939,,More improvements to clustergrid layout,mwaskom
+203,32,43,2020-01-21 11:58:58,1,2020-01-19 19:33:46,160,1.6841666666666666,-1.0,https://github.com/mwaskom/seaborn/pull/1936,,True,1936,,Housekeeping,mwaskom
+43,3,22,2020-01-18 23:10:53,1,2020-01-18 22:34:33,21,0.025231481481481483,-1.0,https://github.com/mwaskom/seaborn/pull/1935,,True,1935,,Control dendrogram properties in clustergrid,mwaskom
+21,5,-16,2020-01-18 21:09:09,1,2020-01-18 20:28:33,37,0.028194444444444446,-1.0,https://github.com/mwaskom/seaborn/pull/1934,,True,1934,,Allow colors= in bivariate kdeplot,mwaskom
+15,3,14,2020-01-18 16:42:18,1,2020-01-18 14:39:44,1,0.08511574074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1932,,True,1932,,Avoid error/warning in lineplot when x is categorical with empty levels,mwaskom
+203,3,135,2020-01-18 13:21:07,1,2020-01-17 02:07:45,68,1.4676157407407406,-1.0,https://github.com/mwaskom/seaborn/pull/1931,,True,1931,,Improvements and fixes to clustermap,mwaskom
+264,9,175,2020-01-16 23:40:59,3,2020-01-14 15:46:39,89,2.3293981481481483,0.9823148148148149,https://github.com/mwaskom/seaborn/pull/1926,,True,1926,,Expose RNG seed where bootstrapping is used,mwaskom
+25,5,23,2020-01-15 15:05:42,3,2020-01-14 01:27:49,2,1.567974537037037,0.7151967592592593,https://github.com/mwaskom/seaborn/pull/1925,,False,1925,,Use a persistant internal random number generator for boostrapping,mwaskom
+30,2,25,2020-01-06 12:31:28,1,2020-01-05 22:49:13,5,0.5710069444444444,-1.0,https://github.com/mwaskom/seaborn/pull/1915,,True,1915,,Allow presence of norm to force numeric interpretation of hue/size,mwaskom
+31,4,31,2020-01-05 21:45:46,1,2020-01-05 20:49:06,0,0.03935185185185185,-1.0,https://github.com/mwaskom/seaborn/pull/1914,,True,1914,,Warn and ignore when passing ax= to figure-level function,mwaskom
+97,3,88,2020-01-05 21:06:25,1,2020-01-05 18:45:26,9,0.0979050925925926,-1.0,https://github.com/mwaskom/seaborn/pull/1913,,True,1913,,Improve robustness to missing data in distribution plots,mwaskom
+47,3,31,2020-01-05 19:01:32,1,2020-01-05 18:09:39,16,0.03603009259259259,-1.0,https://github.com/mwaskom/seaborn/pull/1912,,True,1912,,Improve color palette robustness,mwaskom
+46,5,37,2019-12-30 22:29:20,1,2019-12-30 17:57:30,9,0.18877314814814813,-1.0,https://github.com/mwaskom/seaborn/pull/1909,,True,1909,,Allow FacetGrid legend to work with nested labels,mwaskom
+48,5,30,2019-12-29 21:49:58,1,2019-12-29 18:30:08,18,0.13877314814814815,-1.0,https://github.com/mwaskom/seaborn/pull/1905,,True,1905,,Avoid errors with numeric data stored as strings,mwaskom
+47,4,32,2019-12-29 16:44:05,1,2019-12-29 01:11:55,15,0.647337962962963,-1.0,https://github.com/mwaskom/seaborn/pull/1902,,True,1902,,Allow named categorical palette to force interpretation of hue variable in relational plots,mwaskom
+236,3,175,2019-12-29 00:32:16,1,2019-12-22 20:35:54,61,5.164143518518519,-1.0,https://github.com/mwaskom/seaborn/pull/1900,,True,1900,,Improve pandas index-based alignment,mwaskom
+27,3,23,2019-12-19 16:01:21,1,2019-12-19 12:47:38,4,0.13452546296296297,-1.0,https://github.com/mwaskom/seaborn/pull/1898,,True,1898,,Two small fixes in regplot,mwaskom
+45,6,26,2019-12-18 15:05:53,2,2019-12-17 15:24:26,19,0.9871180555555555,0.9870486111111111,https://github.com/mwaskom/seaborn/pull/1896,,True,1896,,Prevent multiple regplots from adding expanding x margins to the plot,mwaskom
+24,3,22,2019-12-15 03:38:00,1,2019-12-15 02:14:46,2,0.05780092592592593,-1.0,https://github.com/mwaskom/seaborn/pull/1893,,True,1893,,Fix exception on missing hue levels in pointplot,mwaskom
+29,4,28,2019-09-07 18:22:11,0,2019-09-07 16:40:37,1,0.0705324074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1831,,True,1831,,Avoid error when calling set() with list of colors,mwaskom
+26,3,26,2019-09-07 16:02:20,2,2019-09-07 14:36:15,0,0.05978009259259259,-1.0,https://github.com/mwaskom/seaborn/pull/1830,,True,1830,,Exclude norm from clustermap color kwargs,mwaskom
+291,4,124,2019-09-05 18:31:08,2,2019-09-04 01:26:43,167,1.7114004629629629,-1.0,https://github.com/mwaskom/seaborn/pull/1824,,True,1824,,Enhancements and fixes to PairGrid,mwaskom
+26,4,25,2019-09-04 00:32:10,2,2019-09-03 20:35:43,1,0.16420138888888888,-1.0,https://github.com/mwaskom/seaborn/pull/1823,,True,1823,,Don't error on singular data in kdeplot,mwaskom
+75,10,15,2019-08-17 17:06:54,2,2019-08-17 15:25:48,60,0.07020833333333333,-1.0,https://github.com/mwaskom/seaborn/pull/1807,,True,1807,,Small fix onnibus,mwaskom
+10,2,10,2019-08-14 21:11:06,2,2019-08-14 19:19:27,0,0.07753472222222223,0.019375,https://github.com/mwaskom/seaborn/pull/1801,,True,1801,shoyer,Declare xvfb as a Travis service (fixes #1798) and fix other travis issues,mwaskom
+130,19,78,2019-04-15 00:01:20,2,2019-04-14 21:02:16,52,0.12435185185185185,-1.0,https://github.com/mwaskom/seaborn/pull/1725,,True,1725,,Issue omnibus,mwaskom
+23,13,2,2019-04-05 15:39:44,1,2019-04-05 15:13:43,21,0.01806712962962963,-1.0,https://github.com/mwaskom/seaborn/pull/1713,,True,1713,,Omnibus typo fixes,mwaskom
+49,9,-43,2019-04-05 14:47:29,2,2019-04-05 02:29:19,92,0.5126157407407408,-1.0,https://github.com/mwaskom/seaborn/pull/1712,,True,1712,,Get travis running cleanly again,mwaskom
+29,2,27,2018-07-16 12:21:06,3,2018-07-16 11:56:41,2,0.01695601851851852,11.04539351851852,https://github.com/mwaskom/seaborn/pull/1496,,True,1496,,Add catplot companion,mwaskom
+7,2,0,2018-07-15 13:55:31,1,2018-07-15 13:31:49,7,0.016458333333333332,-1.0,https://github.com/mwaskom/seaborn/pull/1495,,True,1495,,Update .ix to .loc for pandas compat,mwaskom
+576,18,122,2018-07-13 10:53:07,4,2018-07-12 00:37:30,454,1.427511574074074,0.8271875,https://github.com/mwaskom/seaborn/pull/1490,,True,1490,,Rename factorplot to catplot and change the default plot kind to strip,mwaskom
+879,14,163,2018-07-09 21:50:34,1,2018-07-08 14:27:21,716,1.3077893518518517,-1.0,https://github.com/mwaskom/seaborn/pull/1487,,True,1487,,Near-finalization of relational plots,mwaskom
+59,2,28,2018-07-05 21:12:34,1,2018-07-05 20:34:16,31,0.026597222222222223,-1.0,https://github.com/mwaskom/seaborn/pull/1483,,True,1483,,First approach to relational plot legends,mwaskom
+29,2,20,2018-07-04 19:43:14,1,2018-07-04 18:56:53,9,0.0321875,-1.0,https://github.com/mwaskom/seaborn/pull/1479,,True,1479,,Fix relplot legend,mwaskom
+507,11,385,2018-07-03 00:33:27,1,2018-07-02 00:43:03,122,0.9933333333333333,-1.0,https://github.com/mwaskom/seaborn/pull/1477,,True,1477,,Add relplot function,mwaskom
+245,5,154,2018-06-28 11:05:41,1,2018-06-28 00:16:33,91,0.45078703703703704,-1.0,https://github.com/mwaskom/seaborn/pull/1475,,True,1475,,Additional enhancements to basic plots,mwaskom
+61,3,57,2018-06-25 13:25:21,1,2018-06-25 12:51:28,4,0.023530092592592592,-1.0,https://github.com/mwaskom/seaborn/pull/1474,,True,1474,,Small changes/fixes to kdeplot,mwaskom
+194,7,112,2018-06-24 15:56:27,1,2018-06-23 22:53:04,82,0.7106828703703704,-1.0,https://github.com/mwaskom/seaborn/pull/1472,,True,1472,,Update color palettes to 10 colors,mwaskom
+115,5,87,2018-06-23 16:16:00,1,2018-06-22 23:05:35,28,0.7155671296296297,-1.0,https://github.com/mwaskom/seaborn/pull/1471,,True,1471,,Allow interface to cubehelix through color_palette,mwaskom
+191,10,85,2018-06-25 00:25:27,1,2018-06-22 00:19:03,106,1.0044444444444445,-1.0,https://github.com/mwaskom/seaborn/pull/1468,,True,1468,,Update style and context parameters,mwaskom
+2,1,1,2018-06-22 00:18:14,1,2018-06-21 23:08:34,1,0.04837962962962963,-1.0,https://github.com/mwaskom/seaborn/pull/1467,,True,1467,,Fix rugplot autoscaling,mwaskom
+13,4,-5,2018-06-22 00:18:22,2,2018-06-21 23:05:23,18,0.05068287037037037,-1.0,https://github.com/mwaskom/seaborn/pull/1466,,True,1466,,Deprecate JointGrid statistical annotation,mwaskom
+1239,61,735,2018-07-05 18:04:09,4,2018-06-21 20:41:18,504,11.890868055555556,8.796793981481482,https://github.com/mwaskom/seaborn/pull/1465,,True,1465,,Omnibus documentation updates for v0.9,mwaskom
+36,3,-20,2018-06-21 22:23:43,1,2018-06-21 20:41:03,56,0.0712962962962963,-1.0,https://github.com/mwaskom/seaborn/pull/1464,,True,1464,,Remove special-cased stacked diagonal histograms in PairGrid,mwaskom
+10,3,6,2018-06-17 16:55:29,2,2018-06-17 16:34:14,4,0.014756944444444444,-1.0,https://github.com/mwaskom/seaborn/pull/1460,,True,1460,,Avoid error when backend has no canvas renderer,mwaskom
+24,7,4,2018-06-17 15:47:51,1,2018-06-17 15:06:06,20,0.028993055555555557,-1.0,https://github.com/mwaskom/seaborn/pull/1459,,True,1459,,Assorted compatability fixes,mwaskom
+51,2,31,2018-06-16 17:52:53,1,2018-06-16 16:52:21,20,0.04203703703703704,-1.0,https://github.com/mwaskom/seaborn/pull/1458,,True,1458,,Allow control over the error representation in lineplot,mwaskom
+13,3,12,2018-06-13 22:43:56,1,2018-06-13 22:15:52,1,0.01949074074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1454,,True,1454,,Accept list inputs in regplot,mwaskom
+15,3,5,2018-06-13 22:20:27,1,2018-06-13 21:59:41,10,0.014421296296296297,-1.0,https://github.com/mwaskom/seaborn/pull/1453,,True,1453,,Fix FacetGrid bug with single facet level,mwaskom
+847,6,682,2018-05-29 20:53:03,1,2018-05-20 17:36:34,165,6.136446759259259,-1.0,https://github.com/mwaskom/seaborn/pull/1436,,True,1436,,Add scatterplot function,mwaskom
+110,2,84,2018-05-19 18:23:52,1,2018-05-14 14:41:28,26,4.154444444444445,-1.0,https://github.com/mwaskom/seaborn/pull/1433,,True,1433,,Make 'units' in lineplot functional,mwaskom
+67,12,-2073,2018-05-12 23:45:56,1,2018-05-12 23:18:28,2140,0.019074074074074073,-1.0,https://github.com/mwaskom/seaborn/pull/1431,,True,1431,,Update infrastructure for docs and install,mwaskom
+8,1,4,2018-04-11 19:33:59,0,2018-04-11 19:12:41,4,0.014791666666666667,-1.0,https://github.com/mwaskom/seaborn/pull/1405,,True,1405,,Don't fail when function does not have __module__ attribute,mwaskom
+11,1,5,2018-04-11 19:06:17,0,2018-04-11 18:48:05,6,0.012638888888888889,-1.0,https://github.com/mwaskom/seaborn/pull/1404,,True,1404,,Fix color_cycle test,mwaskom
+3,2,0,2018-03-05 22:06:21,1,2018-03-05 21:46:15,3,0.013958333333333333,-1.0,https://github.com/mwaskom/seaborn/pull/1384,,True,1384,,Apply ticklabels kwargs to inner FacetGrid axes,mwaskom
+23,4,8,2018-03-05 20:15:28,1,2018-03-05 19:58:17,15,0.01193287037037037,-1.0,https://github.com/mwaskom/seaborn/pull/1383,,True,1383,,Make JointGrid/jointplot accept lists as data input,mwaskom
+2,1,1,2017-10-12 13:23:05,1,2017-10-12 13:06:48,1,0.011307870370370371,-1.0,https://github.com/mwaskom/seaborn/pull/1304,,True,1304,,Include colors submodule,mwaskom
+12,3,-238,2017-09-30 19:34:12,1,2017-09-30 17:45:33,250,0.07545138888888889,-1.0,https://github.com/mwaskom/seaborn/pull/1292,,True,1292,,Final removal of coefplot and interactplot,mwaskom
+225,41,-176,2017-09-30 17:35:22,1,2017-09-29 23:58:56,401,0.7336342592592593,-1.0,https://github.com/mwaskom/seaborn/pull/1290,,True,1290,,Update tests/linting to run with pytest/flake8,mwaskom
+2986,31,2300,2017-11-30 22:03:12,3,2017-09-17 20:51:19,686,53.04991898148148,14.634178240740741,https://github.com/mwaskom/seaborn/pull/1285,,True,1285,,Add lineplot function,mwaskom
+5,2,3,2017-09-02 22:46:18,0,2017-09-02 22:30:44,2,0.010810185185185185,-1.0,https://github.com/mwaskom/seaborn/pull/1272,,True,1272,,Fix kdeplot density axis limits on matplotlib 2.0,mwaskom
+2,1,2,2017-08-30 01:09:39,0,2017-08-30 00:41:17,0,0.019699074074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1269,,True,1269,,Two small clustermap fixes,mwaskom
+31,4,25,2017-08-27 21:28:18,0,2017-08-27 20:36:33,6,0.0359375,-1.0,https://github.com/mwaskom/seaborn/pull/1268,,True,1268,,Add warning in FacetGrid when drawing categorical plots,mwaskom
+122,10,84,2017-08-27 20:28:00,0,2017-08-27 19:46:25,38,0.028877314814814814,-1.0,https://github.com/mwaskom/seaborn/pull/1267,,True,1267,,"Several small fixes, changes, and improvements",mwaskom
+54,3,32,2017-07-15 12:11:06,8,2017-07-14 23:09:44,22,0.5426157407407407,0.0007523148148148148,https://github.com/mwaskom/seaborn/pull/1238,,True,1238,,Add example script making a Joy Divsion plot,mwaskom
+33,9,2,2017-07-14 18:45:33,0,2017-07-13 22:58:04,31,0.8246412037037038,-1.0,https://github.com/mwaskom/seaborn/pull/1237,,True,1237,,Enhance scope of CI tests,mwaskom
+19,3,13,2017-07-10 19:17:48,0,2017-07-10 18:58:25,6,0.013460648148148149,-1.0,https://github.com/mwaskom/seaborn/pull/1233,,True,1233,,Fix error in clustermap with no yticklabels,mwaskom
+1,6,-8,2017-07-09 02:31:30,0,2017-07-09 00:40:29,9,0.0770949074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1226,,True,1226,,Run travis tests on Python 3.6,mwaskom
+2,1,1,2017-07-03 19:36:45,0,2017-07-03 19:27:31,1,0.006412037037037037,-1.0,https://github.com/mwaskom/seaborn/pull/1222,,True,1222,,Account for DPI in swarmplot spacing (closes #1008),mwaskom
+8,1,6,2017-07-03 17:51:41,0,2017-07-03 17:43:13,2,0.00587962962962963,-1.0,https://github.com/mwaskom/seaborn/pull/1221,,True,1221,,Set density axis minimum to 0 in kdeplot (closes #1218),mwaskom
+2215,51,-564,2017-07-07 20:31:31,0,2017-07-01 19:13:42,2779,4.054039351851852,-1.0,https://github.com/mwaskom/seaborn/pull/1217,,True,1217,,WIP: Pre 0.8 housekeeping,mwaskom
+19,6,-17,2017-07-03 17:52:22,0,2017-07-01 18:52:05,36,1.9585300925925926,-1.0,https://github.com/mwaskom/seaborn/pull/1216,,True,1216,,Don't set seaborn style on import,mwaskom
+13,2,9,2017-06-27 23:33:16,0,2017-06-27 23:14:38,4,0.012939814814814815,-1.0,https://github.com/mwaskom/seaborn/pull/1213,,True,1213,,Validate inputs to JointGrid when using data,mwaskom
+135,6,103,2017-06-26 15:57:59,0,2017-06-24 18:44:54,32,1.884085648148148,-1.0,https://github.com/mwaskom/seaborn/pull/1208,,True,1208,,Show standard deviation of observations in error bars,mwaskom
+1281,9,1127,2017-07-01 16:25:28,3,2017-05-22 14:11:48,154,29.092824074074073,22.064351851851853,https://github.com/mwaskom/seaborn/pull/1184,,True,1184,,Improvements and changes to defaults in heatmap,mwaskom
+8,2,3,2017-05-21 16:34:42,0,2017-05-21 15:52:44,5,0.02914351851851852,-1.0,https://github.com/mwaskom/seaborn/pull/1183,,True,1183,,Handle new qualitative matplotlib palettes,mwaskom
+7,1,7,2017-05-21 15:24:34,0,2017-05-21 15:08:10,0,0.01138888888888889,-1.0,https://github.com/mwaskom/seaborn/pull/1182,,True,1182,,Restore clustermap label rotation,mwaskom
+26,1,16,2017-05-21 14:14:17,0,2017-05-20 23:20:14,10,0.6208680555555556,-1.0,https://github.com/mwaskom/seaborn/pull/1180,,True,1180,,Fix test failures on matplotlib 2.0.2,mwaskom
+9,1,8,2017-05-21 14:38:40,0,2017-05-11 15:46:23,1,5.952974537037037,-1.0,https://github.com/mwaskom/seaborn/pull/1178,,True,1178,,Small changes to clustermap,mwaskom
+31,3,28,2017-04-24 14:19:27,0,2017-04-22 23:34:36,3,1.6144791666666667,-1.0,https://github.com/mwaskom/seaborn/pull/1161,,True,1161,,Add optional colorbar for bivariate KDE plots,mwaskom
+121,4,91,2017-04-24 14:19:43,0,2017-04-22 20:22:13,30,1.7482638888888888,-1.0,https://github.com/mwaskom/seaborn/pull/1159,,True,1159,,Omnibus documentation changes,mwaskom
+19,2,18,2017-04-02 19:23:52,0,2017-03-28 19:54:07,1,2.9789930555555557,-1.0,https://github.com/mwaskom/seaborn/pull/1145,,True,1145,,Don't fail on PerfectSeparationError in regplot logistic regression,mwaskom
+2,2,0,2017-02-25 21:30:50,0,2017-02-25 00:02:27,2,0.8947106481481482,-1.0,https://github.com/mwaskom/seaborn/pull/1123,,True,1123,,Specify violin facecolor not color,mwaskom
+4,1,0,2017-02-17 15:31:37,0,2017-02-17 02:11:56,4,0.5553356481481482,-1.0,https://github.com/mwaskom/seaborn/pull/1119,,True,1119,,Ensure that array size is an int,mwaskom
+306,2,237,2017-02-05 13:28:26,1,2017-02-04 22:51:31,69,0.6089699074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1113,,True,1113,,Update internally packaged six version,mwaskom
+25,3,21,2017-02-04 22:34:37,0,2017-02-04 21:50:29,4,0.030648148148148147,-1.0,https://github.com/mwaskom/seaborn/pull/1112,,True,1112,,Allow side-specific offsets in despine,mwaskom
+7,4,0,2017-02-04 21:42:07,0,2017-02-04 21:16:28,7,0.0178125,-1.0,https://github.com/mwaskom/seaborn/pull/1111,,True,1111,,Turn dendrogram axes off instead of using white background,mwaskom
+4,2,2,2017-02-04 21:30:02,0,2017-02-04 21:12:01,2,0.012511574074074074,-1.0,https://github.com/mwaskom/seaborn/pull/1110,,True,1110,,Put a cap on the default number of bins for hex jointplot,mwaskom
+2,2,0,2017-01-24 14:57:42,0,2017-01-24 14:46:54,2,0.0075,-1.0,https://github.com/mwaskom/seaborn/pull/1102,,True,1102,,Fix palette test,mwaskom
+3,1,1,2017-01-23 15:30:54,0,2017-01-23 15:17:46,2,0.00912037037037037,-1.0,https://github.com/mwaskom/seaborn/pull/1100,,True,1100,,Update tests for matplotlib 2.0 change,mwaskom
+113,3,82,2016-09-18 21:10:26,0,2016-09-18 20:44:12,31,0.018217592592592594,-1.0,https://github.com/mwaskom/seaborn/pull/1017,,True,1017,,Allow use of hue without nesting bars/boxes/violins,mwaskom
+49,12,44,2016-04-26 16:31:59,0,2016-04-26 16:16:10,5,0.010983796296296297,-1.0,https://github.com/mwaskom/seaborn/pull/912,,True,912,,Clean up top-level seaborn namespace,mwaskom
+11,3,9,2016-04-25 01:41:10,0,2016-04-25 01:33:30,2,0.005324074074074074,-1.0,https://github.com/mwaskom/seaborn/pull/911,,True,911,,Capture original rcparams at import time and use to reset,mwaskom
+73,3,4,2016-01-24 03:24:22,0,2016-01-24 02:56:27,69,0.019386574074074073,-1.0,https://github.com/mwaskom/seaborn/pull/834,,True,834,,Update stripplot,mwaskom
+11,2,11,2016-01-20 17:42:28,0,2016-01-20 16:54:06,0,0.033587962962962965,-1.0,https://github.com/mwaskom/seaborn/pull/827,,True,827,,Pass hex colors to regression scatterplot,mwaskom
+16,2,6,2015-12-23 04:00:20,0,2015-12-23 03:43:26,10,0.01173611111111111,-1.0,https://github.com/mwaskom/seaborn/pull/806,,True,806,,Workarounds for matplotlib boxplot issues,mwaskom
+747,12,701,2015-12-22 16:22:39,0,2015-12-20 03:28:10,46,1.537835648148148,-1.0,https://github.com/mwaskom/seaborn/pull/804,,True,804,,Add swarmplot function (beeswarm plot),mwaskom
+22,2,6,2015-12-12 18:36:35,0,2015-12-12 18:15:52,16,0.014386574074074074,-1.0,https://github.com/mwaskom/seaborn/pull/798,,True,798,,Avoid scatter issues,mwaskom
+431,4,12,2015-10-28 15:04:24,4,2015-10-27 00:22:25,419,1.612488425925926,0.004409722222222222,https://github.com/mwaskom/seaborn/pull/740,,True,740,,Add compatability for IPython3/4/Jupyter in functions that use widgets,mwaskom
+23,4,22,2015-07-08 14:59:30,0,2015-07-05 19:10:56,1,1.8253935185185186,-1.0,https://github.com/mwaskom/seaborn/pull/627,,True,627,,Sort numerical category levels by default,mwaskom
+10,3,9,2015-06-28 23:05:02,0,2015-06-28 22:52:14,1,0.008888888888888889,-1.0,https://github.com/mwaskom/seaborn/pull/614,,True,614,,Fix issues in FacetGrid and factorplot,mwaskom
+16,2,16,2015-06-28 22:31:59,0,2015-06-28 22:17:00,0,0.010405092592592593,-1.0,https://github.com/mwaskom/seaborn/pull/613,,True,613,,Validate violinplot inner param (closes #558),mwaskom
+15,3,-4,2015-06-28 21:35:33,1,2015-06-28 21:03:24,19,0.02232638888888889,-1.0,https://github.com/mwaskom/seaborn/pull/612,,True,612,,Draw margin titles with ax.annotate instead of f.text,mwaskom
+7,1,4,2015-06-28 21:04:26,0,2015-06-28 20:36:55,3,0.019108796296296297,-1.0,https://github.com/mwaskom/seaborn/pull/611,,True,611,,Avoid crash in clustermap with matplotlib OSX backend,mwaskom
+51,2,47,2015-05-20 23:56:32,0,2015-05-20 23:16:39,4,0.027696759259259258,-1.0,https://github.com/mwaskom/seaborn/pull/572,,True,572,,Fix bug in PairGrid missing data handling,mwaskom
+4367,72,-1469,2015-06-28 20:02:27,1,2015-05-17 18:27:43,5836,30.0,30.0,https://github.com/mwaskom/seaborn/pull/566,,True,566,,Update docs,mwaskom
+42,2,28,2015-05-15 04:33:49,1,2015-05-14 03:27:05,14,1.0463425925925927,0.020381944444444446,https://github.com/mwaskom/seaborn/pull/563,,True,563,,Fix spine trimming with inverted axes or empty ticks,mwaskom
+32,2,28,2015-05-15 04:33:42,1,2015-05-14 02:04:33,4,1.103576388888889,0.5276967592592593,https://github.com/mwaskom/seaborn/pull/562,,True,562,,Fix bug in boxplot where some level had only missing data,mwaskom
+249,30,172,2015-05-14 02:02:54,1,2015-05-14 02:02:17,77,0.00042824074074074075,0.00038194444444444446,https://github.com/mwaskom/seaborn/pull/561,,False,561,,Fix bug in boxplot where all observations in some group were missing,mwaskom
+226,6,153,2015-05-12 02:08:24,0,2015-05-11 20:57:13,73,0.21609953703703705,-1.0,https://github.com/mwaskom/seaborn/pull/554,,True,554,,Changes to seaborn color handling,mwaskom
+93,3,69,2015-05-10 18:59:11,0,2015-05-10 18:38:23,24,0.014444444444444444,-1.0,https://github.com/mwaskom/seaborn/pull/551,,True,551,,Some changes to help heatmap and clustermap plot large matrices,mwaskom
+18,5,-16,2015-05-10 01:49:13,1,2015-05-10 01:19:17,34,0.020787037037037038,-1.0,https://github.com/mwaskom/seaborn/pull/548,,True,548,,Extend new categorical ordering rules to FacetGrid,mwaskom
+93,3,83,2015-05-09 22:08:39,0,2015-05-09 21:38:40,10,0.02082175925925926,-1.0,https://github.com/mwaskom/seaborn/pull/547,,True,547,,Fix hue_order in PairGrid,mwaskom
+34,6,14,2015-06-28 20:37:23,3,2015-05-09 18:48:58,20,36.07528935185185,0.022835648148148147,https://github.com/mwaskom/seaborn/pull/546,,False,546,,Two fixes to avoid matplotlib osx backend issues,mwaskom
+7,2,7,2015-05-04 15:47:03,0,2015-05-04 15:22:58,0,0.016724537037037038,-1.0,https://github.com/mwaskom/seaborn/pull/541,,True,541,,Add savefig method to JointGrid (closes #477),mwaskom
+3,2,2,2015-05-03 23:23:49,0,2015-05-03 23:14:03,1,0.006782407407407407,-1.0,https://github.com/mwaskom/seaborn/pull/539,,True,539,,Add a ceiling to the default number of bins used in distplot,mwaskom
+107,3,87,2015-05-03 20:51:39,0,2015-04-26 15:25:39,20,5.0,-1.0,https://github.com/mwaskom/seaborn/pull/523,,True,523,,Better handling of masks in heatmap and clustermap,mwaskom
+147,6,147,2015-03-26 02:52:08,5,2015-03-26 01:59:20,0,0.03666666666666667,0.7823611111111111,https://github.com/mwaskom/seaborn/pull/490,,True,490,,Add seaborn.crayons and crayon_palette to use Crayola colors,mwaskom
+23,3,21,2015-03-13 06:50:42,0,2015-03-13 06:16:16,2,0.023912037037037037,-1.0,https://github.com/mwaskom/seaborn/pull/468,,True,468,,Fix two FacetGrid problems,mwaskom
+5162,13,1313,2015-03-13 05:53:23,5,2015-03-09 18:56:18,3849,3.4563078703703702,0.0005092592592592592,https://github.com/mwaskom/seaborn/pull/466,,True,466,,Unify categorical plots,mwaskom
+55,1,32,2015-02-25 03:41:08,0,2015-02-25 01:42:32,23,0.08236111111111111,-1.0,https://github.com/mwaskom/seaborn/pull/457,,True,457,,Show a proper colorbar when as_cmap is True in the palette widgets,mwaskom
+70,4,62,2015-01-24 21:43:24,8,2015-01-23 03:26:47,8,1.7615393518518518,0.5364467592592592,https://github.com/mwaskom/seaborn/pull/431,,True,431,,Fix bug in Grid legends,mwaskom
+25,4,5,2015-01-19 17:14:57,0,2015-01-19 17:03:51,20,0.0077083333333333335,-1.0,https://github.com/mwaskom/seaborn/pull/422,,True,422,,Import selectively from statsmodels,mwaskom
+3726,18,2512,2015-01-22 05:30:02,7,2014-12-29 17:12:15,1214,17.51234953703704,15.0,https://github.com/mwaskom/seaborn/pull/410,"enhancement,plots",True,410,,Overhaul of categorical distribution plots,mwaskom
+8,2,4,2014-12-20 21:28:33,0,2014-12-20 21:20:50,4,0.005358796296296296,-1.0,https://github.com/mwaskom/seaborn/pull/405,,True,405,,Add line_kws to residplot,mwaskom
+17,3,17,2014-11-22 17:43:15,0,2014-11-21 18:03:52,0,0.9856828703703704,-1.0,https://github.com/mwaskom/seaborn/pull/377,style,True,377,,Implement workaround for matplotlib 1.4.2 bug,mwaskom
+7,2,6,2014-11-19 02:04:41,0,2014-11-19 01:57:08,1,0.0052430555555555555,-1.0,https://github.com/mwaskom/seaborn/pull/369,,True,369,,Fix violinplot with multiple identical values,mwaskom
+15,2,13,2014-11-13 19:05:52,0,2014-11-13 18:37:38,2,0.01960648148148148,-1.0,https://github.com/mwaskom/seaborn/pull/363,,True,363,,Fix bug in colormap limit inference when input has nans,mwaskom
+31,2,-3,2014-11-11 04:32:15,0,2014-11-11 04:22:37,34,0.006689814814814815,-1.0,https://github.com/mwaskom/seaborn/pull/359,,True,359,,"Change clustermap and dendrogram default methods to ""average""",mwaskom
+1459,8,1436,2014-11-06 23:15:55,1,2014-11-06 23:06:14,23,0.006724537037037037,-1.0,https://github.com/mwaskom/seaborn/pull/354,,True,354,,Finalize clustermap,mwaskom
+1,1,0,2014-10-28 01:02:11,0,2014-10-28 00:53:13,1,0.0062268518518518515,-1.0,https://github.com/mwaskom/seaborn/pull/345,testing,True,345,,Fix failing matplotlib rc test,mwaskom
+8,2,3,2014-10-20 18:59:15,0,2014-10-20 18:45:58,5,0.009224537037037036,-1.0,https://github.com/mwaskom/seaborn/pull/337,,True,337,,Don't compute significance for non-default corrplot methods,mwaskom
+827,16,823,2014-10-11 22:45:17,7,2014-10-08 14:21:23,4,2.3499305555555554,0.528599537037037,https://github.com/mwaskom/seaborn/pull/325,,True,325,,Add heatmap function for plotting rectangular data,mwaskom
+208,7,191,2014-10-05 21:52:26,2,2014-10-05 17:46:52,17,0.1705324074074074,0.17337962962962963,https://github.com/mwaskom/seaborn/pull/323,"enhancement,plots",True,323,,Add hue_kws and markers to axis grids,mwaskom
+4,1,-3,2014-09-27 17:05:53,0,2014-09-27 16:57:14,7,0.006006944444444444,-1.0,https://github.com/mwaskom/seaborn/pull/306,infrastructure,True,306,,Always check dependencies in setup.py,mwaskom
+8,3,7,2014-09-21 19:42:45,0,2014-09-21 19:35:41,1,0.004907407407407407,-1.0,https://github.com/mwaskom/seaborn/pull/299,,True,299,,"Don't show lmplot legend when hue in [row, col]",mwaskom
+19,2,16,2014-09-21 19:30:14,1,2014-09-21 17:59:17,3,0.06315972222222223,0.005162037037037037,https://github.com/mwaskom/seaborn/pull/298,plots,True,298,,Work around matplotlib 1.4 boxplot flier bug,mwaskom
+37,3,34,2014-09-21 17:17:05,0,2014-09-21 17:10:59,3,0.0042361111111111115,-1.0,https://github.com/mwaskom/seaborn/pull/297,plots,True,297,,Fix non-default index but in PairGrid,mwaskom
+10,4,0,2014-09-15 00:01:03,0,2014-09-14 23:17:48,10,0.030034722222222223,-1.0,https://github.com/mwaskom/seaborn/pull/292,,True,292,,Fix unittests that fail with numpy 1.9,mwaskom
+822,6,694,2014-09-21 16:51:45,2,2014-09-09 04:44:21,128,8.505138888888888,0.9297685185185185,https://github.com/mwaskom/seaborn/pull/286,"enhancement,style,widgets",True,286,,Add new color palettes with interactive palette widgets,mwaskom
+34,11,13,2014-09-08 22:37:05,4,2014-09-04 16:00:39,21,2.275300925925926,0.028101851851851854,https://github.com/mwaskom/seaborn/pull/279,,True,279,,Fix py3k tests,mwaskom
+10,1,9,2014-09-02 17:46:31,0,2014-09-02 17:36:28,1,0.0069791666666666665,-1.0,https://github.com/mwaskom/seaborn/pull/273,,True,273,,Fix gaussian_kde in violinplot,mwaskom
+8,1,7,2014-09-02 17:16:32,0,2014-09-02 17:02:54,1,0.009467592592592593,-1.0,https://github.com/mwaskom/seaborn/pull/272,,True,272,,Let kde run when scipy doesn't accept custom bandwidth,mwaskom
+45,1,35,2014-08-30 15:22:56,0,2014-08-30 15:14:21,10,0.005960648148148148,-1.0,https://github.com/mwaskom/seaborn/pull/270,,True,270,,Make rc tests passable on systems without MS fonts,mwaskom
+59,2,51,2014-08-29 19:26:01,1,2014-08-29 18:58:29,8,0.01912037037037037,-1.0,https://github.com/mwaskom/seaborn/pull/268,plots,True,268,,Fix PairGrid,mwaskom
+541,10,227,2014-08-29 01:25:49,0,2014-08-29 00:29:28,314,0.03913194444444444,-1.0,https://github.com/mwaskom/seaborn/pull/265,,True,265,,Omnibus doc updates,mwaskom
+51,3,50,2014-08-28 23:25:41,0,2014-08-28 23:04:58,1,0.014386574074074074,-1.0,https://github.com/mwaskom/seaborn/pull/264,,True,264,,Let violinplot work when bins have single observations,mwaskom
+1082,6,958,2014-08-28 19:22:09,1,2014-08-28 03:26:09,124,0.6638888888888889,-1.0,https://github.com/mwaskom/seaborn/pull/262,"enhancement,plots,refactor",True,262,,PairGrid and pairplot for drawing scatterplot (and more!) matrices,mwaskom
+40,3,38,2014-08-24 00:57:33,0,2014-08-23 23:05:52,2,0.07755787037037037,-1.0,https://github.com/mwaskom/seaborn/pull/261,,True,261,,Add choose_cubehelix function,mwaskom
+44,7,30,2014-08-17 20:56:07,0,2014-08-17 20:19:09,14,0.025671296296296296,-1.0,https://github.com/mwaskom/seaborn/pull/256,,True,256,,Unify rules for default color palettes,mwaskom
+15,1,8,2014-08-07 22:42:06,0,2014-08-07 22:17:27,7,0.017118055555555556,-1.0,https://github.com/mwaskom/seaborn/pull/251,,True,251,,Allow control over box/violin desaturation,mwaskom
+7,4,-29,2014-08-07 04:40:47,0,2014-08-05 18:34:25,36,1.421087962962963,-1.0,https://github.com/mwaskom/seaborn/pull/249,,True,249,,Remove functions that were deprecated in 0.3,mwaskom
+36,3,36,2014-08-02 23:20:51,0,2014-08-02 23:17:16,0,0.002488425925925926,-1.0,https://github.com/mwaskom/seaborn/pull/247,plots,True,247,,Have factorplot handle unbalanced data better,mwaskom
+6,1,1,2014-08-02 18:29:23,0,2014-08-02 18:22:25,5,0.004837962962962963,-1.0,https://github.com/mwaskom/seaborn/pull/245,,True,245,,Update apt-get and skip doc build on travis,mwaskom
+43,3,39,2014-06-28 01:19:17,0,2014-06-28 01:01:19,4,0.012476851851851852,-1.0,https://github.com/mwaskom/seaborn/pull/227,,True,227,,Add logx option to regplot,mwaskom
+972,4,972,2014-06-26 18:48:12,1,2014-06-26 01:30:30,0,0.720625,0.0028819444444444444,https://github.com/mwaskom/seaborn/pull/225,"enhancement,style",True,225,,Add xkcd color dictionary and palette function,mwaskom
+8,2,8,2014-06-17 03:13:22,0,2014-06-17 02:14:26,0,0.04092592592592593,-1.0,https://github.com/mwaskom/seaborn/pull/223,,True,223,,Skip image diff when testing notebooks,mwaskom
+35,2,19,2014-06-04 01:48:50,0,2014-06-03 15:22:52,16,0.4346990740740741,-1.0,https://github.com/mwaskom/seaborn/pull/217,testing,True,217,,Revert change to functions that reset RC params,mwaskom
+4,1,3,2014-05-13 16:01:44,0,2014-05-13 15:44:48,1,0.01175925925925926,-1.0,https://github.com/mwaskom/seaborn/pull/196,,True,196,,Be safer about trying to operate on possible strings,mwaskom
+73,9,53,2014-04-27 17:19:12,0,2014-04-27 02:11:23,20,0.6304282407407408,-1.0,https://github.com/mwaskom/seaborn/pull/184,"infrastructure,testing",True,184,,Changes to make tests run on older versions of dependencies,mwaskom
+34,1,32,2014-04-26 19:32:01,0,2014-04-26 19:20:42,2,0.007858796296296296,-1.0,https://github.com/mwaskom/seaborn/pull/183,infrastructure,True,183,,Make setup behave more politely about dependencies (GH #169),mwaskom
+101,6,79,2014-04-26 19:01:48,1,2014-04-26 18:36:42,22,0.017430555555555557,-1.0,https://github.com/mwaskom/seaborn/pull/182,"enhancement,style",True,182,,Add the scale_font option to plotting_context,mwaskom
+219,5,215,2014-04-25 17:18:01,0,2014-04-25 16:48:28,4,0.020520833333333332,-1.0,https://github.com/mwaskom/seaborn/pull/180,,True,180,,Add cubehelix_palette function,mwaskom
+19,2,17,2014-04-25 02:14:46,0,2014-04-25 02:02:32,2,0.00849537037037037,-1.0,https://github.com/mwaskom/seaborn/pull/179,,True,179,,Add hist_norm argument to distplot,mwaskom
+54,3,50,2014-08-27 17:22:51,11,2014-04-23 04:12:14,4,90.0,0.008553240740740741,https://github.com/mwaskom/seaborn/pull/176,"annoyance,style",True,176,,Make font fallback work better,mwaskom
+171,5,158,2014-04-21 15:17:20,1,2014-04-18 16:45:39,13,0.9386689814814815,-1.0,https://github.com/mwaskom/seaborn/pull/173,plots,True,173,,Fix FacetGrid col_wrap when facets don't evenly factor into cols,mwaskom
+171,5,158,2014-04-18 16:44:59,1,2014-04-18 15:21:27,13,0.05800925925925926,0.05800925925925926,https://github.com/mwaskom/seaborn/pull/172,,False,172,,Fix col_wrap issues with odd number of facets,mwaskom
+1,1,1,2014-04-30 18:23:03,1,2014-04-09 13:30:42,0,15.0,12.220046296296296,https://github.com/mwaskom/seaborn/pull/167,testing,True,167,,Test on Python 3.4,mwaskom
+18,3,13,2014-04-07 16:48:56,0,2014-04-05 16:41:06,5,0.005439814814814815,-1.0,https://github.com/mwaskom/seaborn/pull/161,,True,161,,Make pointplot points adjust with linewidth,mwaskom
+55,2,54,2014-03-29 21:32:54,0,2014-03-29 21:06:41,1,0.018206018518518517,-1.0,https://github.com/mwaskom/seaborn/pull/157,,True,157,,Fix FacetGrid legend with non-string hue levels,mwaskom
+55,2,54,2014-03-29 21:06:12,0,2014-03-29 21:06:04,1,9.259259259259259e-05,-1.0,https://github.com/mwaskom/seaborn/pull/156,,False,156,,Fix FacetGrid legend with non-string hue levels,mwaskom
+11,1,4,2014-03-28 18:29:21,0,2014-03-28 18:05:28,7,0.016585648148148148,-1.0,https://github.com/mwaskom/seaborn/pull/155,,True,155,,Fix density support calculation using scipy kde,mwaskom
+12,2,10,2014-03-27 16:56:59,0,2014-03-27 16:34:34,2,0.01556712962962963,-1.0,https://github.com/mwaskom/seaborn/pull/153,,True,153,,Fix palette truncation in with statement,mwaskom
+3,2,0,2014-03-27 16:15:41,0,2014-03-27 02:13:50,3,0.5846180555555556,-1.0,https://github.com/mwaskom/seaborn/pull/152,testing,True,152,,Fix new pep8 rules,mwaskom
+12,2,10,2014-03-27 16:32:52,0,2014-03-27 01:54:13,2,0.6101736111111111,-1.0,https://github.com/mwaskom/seaborn/pull/151,,False,151,,Fix palette truncation in with statement,mwaskom
+400,27,-65,2014-03-23 00:30:48,0,2014-03-23 00:21:50,465,0.0062268518518518515,-1.0,https://github.com/mwaskom/seaborn/pull/143,,True,143,,Finalize 0.3,mwaskom
+2150,31,-143,2014-03-22 17:18:03,2,2014-03-21 22:50:48,2293,0.7689236111111111,0.036550925925925924,https://github.com/mwaskom/seaborn/pull/141,"docs,enhancement,style",True,141,,Overhaul style functions,mwaskom
+95,3,81,2014-03-17 01:52:38,0,2014-03-17 01:41:36,14,0.007662037037037037,-1.0,https://github.com/mwaskom/seaborn/pull/138,"enhancement,plots",True,138,,Map factorplot hue variable with marker/linestyle,mwaskom
+18,4,15,2014-03-16 22:59:17,0,2014-03-16 22:33:34,3,0.017858796296296296,-1.0,https://github.com/mwaskom/seaborn/pull/137,plots,True,137,,Copy regplot kwargs to avoid issues with facets,mwaskom
+849,27,840,2014-03-16 17:12:17,0,2014-03-16 16:57:54,9,0.009988425925925927,-1.0,https://github.com/mwaskom/seaborn/pull/136,"docs,enhancement",True,136,,Add example gallery and reorganize doc homepage,mwaskom
+13,2,12,2014-03-14 22:53:45,0,2014-03-14 22:53:40,1,5.787037037037037e-05,-1.0,https://github.com/mwaskom/seaborn/pull/135,"enhancement,plots",True,135,,Allow quick setting of FacetGrid xtick step,mwaskom
+241,7,228,2014-03-14 02:10:41,0,2014-03-13 23:49:47,13,0.09784722222222222,-1.0,https://github.com/mwaskom/seaborn/pull/134,"enhancement,plots",True,134,,Add residplot function,mwaskom
+932,10,842,2014-03-10 23:54:00,18,2014-03-08 22:00:11,90,0.07903935185185185,0.25621527777777775,https://github.com/mwaskom/seaborn/pull/130,"enhancement,plots",True,130,,Add JointGrid and jointplot,mwaskom
+9,1,3,2015-07-04 18:16:49,6,2014-03-07 19:17:15,6,345.0,0.8844328703703703,https://github.com/mwaskom/seaborn/pull/129,"api,enhancement,plots",False,129,,WIP: Use joblib to cache computationally intensive parts of plotting functions,mwaskom
+3,2,-2,2014-03-07 17:02:39,0,2014-03-07 16:34:01,5,0.019884259259259258,-1.0,https://github.com/mwaskom/seaborn/pull/128,plots,True,128,,Use robust range in default interactplot color scale,mwaskom
+1568,20,1491,2014-03-07 05:05:04,0,2014-03-07 04:32:43,77,0.02246527777777778,-1.0,https://github.com/mwaskom/seaborn/pull/127,infrastructure,True,127,,Reduce dependency load,mwaskom
+9,3,9,2014-03-07 19:07:29,1,2014-03-07 01:26:04,0,0.7370949074074075,-1.0,https://github.com/mwaskom/seaborn/pull/126,"enhancement,infrastructure,style",True,126,,Add seaborn.apionly pseudomodule to get the api without the style,mwaskom
+2,1,0,2014-03-05 22:23:32,0,2014-03-05 22:10:58,2,0.008726851851851852,-1.0,https://github.com/mwaskom/seaborn/pull/125,,True,125,,Add default value for offset_spines,mwaskom
+181,6,148,2014-03-05 17:26:21,1,2014-03-05 17:25:51,33,0.00034722222222222224,-1.0,https://github.com/mwaskom/seaborn/pull/124,,True,124,,ENH: function to offset spines,mwaskom
+51,2,27,2014-03-05 01:37:46,1,2014-03-05 00:55:06,24,0.02962962962962963,0.0024421296296296296,https://github.com/mwaskom/seaborn/pull/122,testing,True,122,,Improve Travis config,mwaskom
+5686,23,4874,2014-03-05 00:15:11,20,2014-02-14 06:48:07,812,12.72712962962963,0.7351620370370371,https://github.com/mwaskom/seaborn/pull/106,"enhancement,plots,refactor,testing",True,106,,Omnibus enhancements to linear model plotting and structured plot grids,mwaskom
+17,3,16,2014-02-01 23:16:35,0,2014-02-01 21:10:57,1,0.08724537037037038,-1.0,https://github.com/mwaskom/seaborn/pull/100,testing,True,100,,Improve automatic checking of code,mwaskom
+99,3,62,2014-02-01 20:15:27,3,2014-02-01 19:35:21,37,0.02784722222222222,0.00917824074074074,https://github.com/mwaskom/seaborn/pull/99,,True,99,,Add cumulative density option to kdeplot,mwaskom
+5,2,1,2014-02-01 19:28:48,0,2014-02-01 19:23:23,4,0.003761574074074074,-1.0,https://github.com/mwaskom/seaborn/pull/98,,True,98,,Revert changes to default grid widths,mwaskom
+31,4,30,2014-02-01 18:33:24,0,2014-02-01 18:01:46,1,0.021967592592592594,-1.0,https://github.com/mwaskom/seaborn/pull/97,,True,97,,Fix matplotlib tests on Travis,mwaskom
+158,3,117,2014-01-15 05:58:37,1,2014-01-15 05:53:09,41,0.0037962962962962963,0.00011574074074074075,https://github.com/mwaskom/seaborn/pull/85,,True,85,,Improve kde computation and (re)-add scipy KDE,mwaskom
+472,8,280,2014-01-15 05:48:47,1,2014-01-15 05:48:20,192,0.0003125,0.00038194444444444446,https://github.com/mwaskom/seaborn/pull/84,,False,84,,Fix KDE computation and (re)add scipy kde,mwaskom
+158,3,117,2014-01-15 05:47:49,2,2014-01-14 07:38:53,41,0.9228703703703703,0.9228703703703703,https://github.com/mwaskom/seaborn/pull/83,,False,83,,Improve kde computation,mwaskom
+297,4,154,2013-12-26 22:50:23,0,2013-12-26 04:05:45,143,0.7809953703703704,-1.0,https://github.com/mwaskom/seaborn/pull/54,refactor,True,54,,Refactor boxplot/violinplot setup,mwaskom
+365,3,116,2013-12-23 00:02:50,0,2013-12-22 22:32:06,249,0.06300925925925926,-1.0,https://github.com/mwaskom/seaborn/pull/48,,True,48,,Order parameter in boxplot and violinplot,mwaskom
+2,1,0,2013-12-22 20:33:21,0,2013-12-22 20:16:11,2,0.011921296296296296,-1.0,https://github.com/mwaskom/seaborn/pull/47,,True,47,,Fix Python 3 tests,mwaskom
+69,13,27,2013-12-22 19:50:04,0,2013-12-22 07:17:04,42,0.5229166666666667,-1.0,https://github.com/mwaskom/seaborn/pull/46,,True,46,,Py3k compatability changes,mwaskom
+507,9,294,2013-12-20 21:18:54,0,2013-12-18 19:42:06,213,2.067222222222222,-1.0,https://github.com/mwaskom/seaborn/pull/44,enhancement,True,44,,WIP: Omnibus KDE changes,mwaskom
+1,1,0,2013-12-16 18:30:24,0,2013-12-16 18:26:43,1,0.0025578703703703705,-1.0,https://github.com/mwaskom/seaborn/pull/42,,True,42,,Change how PIL is installed in conda,mwaskom
+521,12,76,2013-12-16 05:59:16,0,2013-12-15 19:35:24,445,0.43324074074074076,-1.0,https://github.com/mwaskom/seaborn/pull/39,,True,39,,Improve testing of tutorial notebooks,mwaskom
+148,2,54,2013-12-14 08:44:52,0,2013-12-14 08:37:25,94,0.0051736111111111115,-1.0,https://github.com/mwaskom/seaborn/pull/37,,True,37,,Add option to bin continuous predictor variable in lmplot,mwaskom
+83,2,18,2013-12-13 03:37:55,0,2013-12-13 03:37:43,65,0.0001388888888888889,-1.0,https://github.com/mwaskom/seaborn/pull/33,,True,33,,Make some changes/enhancements to interactplot,mwaskom
+1684,6,17,2013-12-13 00:58:58,0,2013-12-13 00:57:24,1667,0.0010879629629629629,-1.0,https://github.com/mwaskom/seaborn/pull/32,,True,32,,Split the plotobjs.py into component modules,mwaskom
+348,2,304,2013-12-11 16:42:11,7,2013-12-11 07:22:52,44,0.38841435185185186,8.824444444444445,https://github.com/mwaskom/seaborn/pull/31,,True,31,,Adding `interactplot` function,mwaskom
+13,1,5,2013-12-10 04:31:05,0,2013-12-10 04:31:00,8,5.787037037037037e-05,-1.0,https://github.com/mwaskom/seaborn/pull/26,,True,26,,Add travis CI to seaborn,mwaskom
+1051,9,553,2013-11-26 21:03:13,0,2013-11-26 17:47:06,498,0.13619212962962962,-1.0,https://github.com/mwaskom/seaborn/pull/19,,True,19,,Enhancements to tsplot,mwaskom
+134,2,67,2013-11-21 03:46:55,0,2013-11-21 03:46:50,67,5.787037037037037e-05,-1.0,https://github.com/mwaskom/seaborn/pull/15,,True,15,,Fix bug in xtick names for boxplot/violin using groupby (closes #14),mwaskom
