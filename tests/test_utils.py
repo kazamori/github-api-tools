@@ -5,6 +5,8 @@ import pytest
 from github_api.utils import calculate_days
 from github_api.utils import is_weekend
 from github_api.utils import offset_weekdays
+from github_api.utils import parse_datetime
+from github_api.utils import between_datetime
 
 
 @pytest.mark.parametrize('dt,expected', [
@@ -43,3 +45,30 @@ def test_offset_weekdays(dt, expected):
 ])
 def test_calculate_days(start, end, expected):
     assert calculate_days(start, end) == expected
+
+
+@pytest.mark.parametrize('s,format_,expected', [
+    ('2020-04-06 08:50:30', None, datetime(2020, 4, 6, 8, 50, 30)),
+    ('20200406', '%Y%m%d', datetime(2020, 4, 6, 0, 0, 0)),
+])
+def test_parse_datetime(s, format_, expected):
+    if format_ is None:
+        assert parse_datetime(s) == expected
+    else:
+        assert parse_datetime(s, format_) == expected
+
+
+@pytest.mark.parametrize('dt,fromdate,todate,expected', [
+    # normal
+    (datetime(2020, 4, 6), datetime(2020, 4, 5), datetime(2020, 4, 7), True),
+    (datetime(2020, 4, 6), None, datetime(2020, 4, 7), True),
+    (datetime(2020, 4, 6), datetime(2020, 4, 5), None, True),
+    (datetime(2020, 4, 6), None, None, True),
+    # error
+    (datetime(2020, 4, 4), datetime(2020, 4, 5), datetime(2020, 4, 7), False),
+    (datetime(2020, 4, 4), datetime(2020, 4, 5), None, False),
+    (datetime(2020, 4, 8), datetime(2020, 4, 5), datetime(2020, 4, 7), False),
+    (datetime(2020, 4, 8), None, datetime(2020, 4, 7), False),
+])
+def test_between_datetime(dt, fromdate, todate, expected):
+    assert between_datetime(dt, fromdate, todate) == expected

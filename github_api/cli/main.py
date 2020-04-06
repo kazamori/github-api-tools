@@ -1,6 +1,7 @@
 import argparse
 import logging
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from github import Github
@@ -11,6 +12,7 @@ from ..core.repository import Repository
 from ..core.writer import create_filename
 from ..core.writer import output_csv
 from ..utils import log
+from ..utils import parse_datetime
 from ..visualization.chart import output_chart
 from .box_option import parse_box_argument
 from .scatter_option import parse_scatter_argument
@@ -24,9 +26,19 @@ def has_plot_option(argv):
     return False
 
 
+def parse_dateto(s):
+    return parse_datetime(s + ' 23:59:59')
+
+
+def parse_datefrom(s):
+    return parse_datetime(s + ' 00:00:00')
+
+
 def parse_argument():
     parser = argparse.ArgumentParser()
     parser.set_defaults(
+        datefrom=None,
+        dateto=datetime.now(),
         enable_cache=True,
         nop=False,
         _plot=Plot.SCATTER.value,
@@ -35,6 +47,16 @@ def parse_argument():
         user=None,
         verbose=False,
         version=cli.__version__,
+    )
+
+    parser.add_argument(
+        '--from', action='store', dest='datefrom', type=parse_datefrom,
+        help='filter created_at FROM: e.g. 2020-04-06'
+    )
+
+    parser.add_argument(
+        '--to', action='store', dest='dateto', type=parse_dateto,
+        help='filter created_at TO: e.g. 2020-04-06'
     )
 
     parser.add_argument(

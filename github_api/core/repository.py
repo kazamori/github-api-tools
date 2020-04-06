@@ -1,4 +1,5 @@
 from ..consts import GithubState
+from ..utils import between_datetime
 from ..utils import calculate_days
 from ..utils import log
 
@@ -57,6 +58,11 @@ class Repository:
         log.info(f'Repository: {repo.name}')
         log.info(f'          : {repo.html_url}')
         for pr in repo.get_pulls(state=GithubState.ALL.value):
+            if not between_datetime(pr.created_at,
+                                    self.args.datefrom, self.args.dateto):
+                log.debug(f'not between dates: {pr.created_at}')
+                continue
+
             log.info(f'#{pr.number}: {pr.title}')
             assignee = pr.assignee
             if assignee is None:

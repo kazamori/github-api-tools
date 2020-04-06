@@ -16,7 +16,7 @@ Confirm `gh-cli` command show help.
 
 ```bash
 $ gh-cli --help
-usage: gh-cli [-h] [--disable-cache] [--nop]
+usage: gh-cli [-h] [--from DATEFROM] [--to DATETO] [--disable-cache] [--nop]
               [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
               [--verbose] [--version] [--palette PALETTE] [--style STYLE]
               {box,scatter,violin} ...
@@ -26,6 +26,8 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
+  --from DATEFROM       filter created_at FROM: e.g. 2020-04-06
+  --to DATETO           filter created_at TO: e.g. 2020-04-06
   --disable-cache       disable cache
   --nop                 use as a separator for option handling of positional
                         argument

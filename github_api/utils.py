@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 from datetime import timedelta
 
 from .consts import PACKAGE_NAME
@@ -116,3 +117,20 @@ def calculate_days(start, end):
         return 5.0 + calculate_days(nextweek_date, end)
 
     return elapsed.total_seconds() / _DAY_SECONDS
+
+
+def parse_datetime(s, format_='%Y-%m-%d %H:%M:%S'):
+    return datetime.strptime(s, format_)
+
+
+def between_datetime(dt, fromdate, todate):
+    if fromdate is None:
+        if todate is None:
+            return True
+        else:
+            return dt <= todate
+
+    if todate is None:
+        return fromdate <= dt
+
+    return fromdate <= dt <= todate
