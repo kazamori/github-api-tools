@@ -64,9 +64,9 @@ class Repository:
                 continue
 
             log.info(f'#{pr.number}: {pr.title}')
-            assignee = pr.assignee.login
-            if assignee is None:
-                assignee = pr.user.login
+            assignee = pr.user.login
+            if pr.assignee is not None:
+                assignee = pr.assignee.login
 
             if self.args.user == assignee:
                 log.debug(f' - comments: {pr.comments}')
