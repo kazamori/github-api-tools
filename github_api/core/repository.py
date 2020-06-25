@@ -64,7 +64,7 @@ class Repository:
                 continue
 
             log.info(f'#{pr.number}: {pr.title}')
-            assignee = pr.assignee
+            assignee = pr.assignee.login
             if assignee is None:
                 assignee = pr.user.login
 
