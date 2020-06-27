@@ -13,7 +13,7 @@ _RE_REPOSITORY = re.compile(
 
 class BasePlot:
 
-    MAX_UNIQUE_LABELS = 16
+    MAX_UNIQUE_LABELS = 8
 
     def _set_changes_bins(self):
         step = self.changes_bins_step
