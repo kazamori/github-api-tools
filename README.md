@@ -95,6 +95,10 @@ $ vviewer --quoting all example/csv-files/seaborn.csv
 Enter to next line, or q (quit):
 ```
 
+#### Note
+
+* `elapsed_days_of_first_comment`: first comment is any of issue comments, review comments and grouped review comments.
+
 ### Scatter plot
 
 You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/master/example/csv-files/seaborn.csv) by default.
