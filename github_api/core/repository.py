@@ -118,7 +118,6 @@ class Repository:
             if pr.assignee is not None:
                 assignee = pr.assignee.login
 
-            log.info(f'#{pr.number}: {pr.title}')
             if self.args.user == assignee:
                 log.debug(f' - comments: {pr.comments}')
                 log.debug(f' - review_comments: {pr.review_comments}')
