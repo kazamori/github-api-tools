@@ -17,6 +17,8 @@ def create_data(repo):
         'changes': [],
         'closed_at': [],
         'comments': [],
+        'review_comments': [],
+        'reviews_length': [],
         'created_at': [],
         'deletions': [],
         'elapsed_days': [],
@@ -25,7 +27,7 @@ def create_data(repo):
         'labels_': [],
         'merged': [],
         'number': [],
-        'reviews': [],
+        'reviewers': [],
         'title': [],
         'user.login': [],
     }

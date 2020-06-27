@@ -29,10 +29,13 @@ class Repository:
         log.debug(f' - labels: {pr.labels_}')
 
     def set_reviews(self, pr):
-        reviews = {i.user.login for i in pr.get_reviews()
-                   if self.args.user != i.user.login}
-        pr.reviews = ','.join(reviews)
-        log.debug(f' - reviews: {pr.reviews}')
+        pr.reviews = list(pr.get_reviews())
+        pr.reviews_length = len(pr.reviews)
+        log.debug(f' - reviews_length: {pr.reviews_length}')
+        reviewers = {i.user.login for i in pr.reviews
+                     if self.args.user != i.user.login}
+        pr.reviewers = ','.join(reviewers)
+        log.debug(f' - reviewers: {pr.reviewers}')
 
     def set_elapsed_days(self, pr):
         if pr.closed_at is None:
@@ -45,7 +48,9 @@ class Repository:
 
     def set_elapsed_days_of_first_comment(self, pr):
         pr.elapsed_days_of_first_comment = -1
-        if pr.comments == 0 and pr.review_comments == 0:
+        if pr.comments == 0 and \
+           pr.review_comments == 0 and \
+           pr.reviews_length == 0:
             return
 
         comments = []
@@ -63,6 +68,13 @@ class Repository:
                 self.args.exclude_commented_user)
             if _first is not None:
                 comments.append(_first)
+        if pr.reviews_length != 0:
+            _first = get_first_comment(
+                pr.reviews, self.args.user,
+                self.args.exclude_commented_user)
+            if _first is not None:
+                comments.append(_first)
+
         if len(comments) == 0:
             return
 
@@ -75,6 +87,21 @@ class Repository:
         pr.elapsed_days_of_first_comment = elapsed
         log.debug(f' - elapsed_days(1st comment): {elapsed}')
         return
+
+    def get_pull(self, id_):
+        # for debugging use
+        repo = self.gh.get_repo(self.name)
+        log.info(f'Repository: {repo.name}')
+        log.info(f'          : {repo.html_url}')
+        pr = repo.get_pull(id_)
+        log.info(f'#{pr.number}: {pr.title}')
+        log.info(f' - comments: {pr.comments}')
+        log.info(f' - review_comments: {pr.review_comments}')
+        self.set_changes(pr)
+        self.set_labels(pr)
+        self.set_reviews(pr)
+        self.set_elapsed_days(pr)
+        self.set_elapsed_days_of_first_comment(pr)
 
     def get_pulls(self):
         repo = self.gh.get_repo(self.name)

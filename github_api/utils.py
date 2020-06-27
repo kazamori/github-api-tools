@@ -140,5 +140,9 @@ def get_first_comment(comments, me, exclude_users=[]):
     for comment in comments:
         if comment.user.login == me or comment.user.login in exclude_users:
             continue
+        if hasattr(comment, 'submitted_at'):
+            # FIXME: PullRequestReview is different from
+            #        IssueComment/PullRequestComment
+            comment.created_at = comment.submitted_at
         return comment
     return None

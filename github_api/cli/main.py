@@ -44,6 +44,7 @@ def parse_argument():
         nop=False,
         _plot=Plot.SCATTER.value,
         plot=None,
+        pr_id=None,
         repositories=[],
         user=None,
         verbose=False,
@@ -73,6 +74,11 @@ def parse_argument():
     parser.add_argument(
         '--nop', action='store_true',
         help='use as a separator for option handling of positional argument'
+    )
+
+    parser.add_argument(
+        '--pr-id', action='store', type=int, dest='pr_id',
+        help='set arbitrary pull request number in given repository'
     )
 
     parser.add_argument(
@@ -156,6 +162,12 @@ def main():
 
     if args.user is None:
         args.user = gh.get_user().login
+
+    if args.pr_id is not None:
+        name = args.repositories[0]
+        repo = Repository(args, gh, name)
+        repo.get_pull(args.pr_id)
+        return
 
     for name in args.repositories:
         path = get_csv_path(args, name, gh)

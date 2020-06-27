@@ -17,7 +17,7 @@ Confirm `gh-cli` command show help.
 ```bash
 usage: gh-cli [-h] [--from DATEFROM] [--to DATETO]
               [--exclude-commented-user [EXCLUDE_COMMENTED_USER [EXCLUDE_COMMENTED_USER ...]]]
-              [--disable-cache] [--nop]
+              [--disable-cache] [--nop] [--pr-id PR_ID]
               [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
               [--verbose] [--version] [--palette PALETTE] [--style STYLE]
               {box,scatter,violin} ...
@@ -34,6 +34,7 @@ optional arguments:
   --disable-cache       disable cache
   --nop                 use as a separator for option handling of positional
                         argument
+  --pr-id PR_ID         set arbitrary pull request number in given repository
   --repository [REPOSITORIES [REPOSITORIES ...]]
                         set repositories
   --user USER           set user to filter assignee of pull request
