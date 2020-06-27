@@ -136,6 +136,12 @@ def between_datetime(dt, fromdate, todate):
     return fromdate <= dt <= todate
 
 
+def is_before_date(dt, fromdate):
+    if fromdate is None:
+        return False
+    return dt < fromdate
+
+
 def get_first_comment(comments, me, exclude_users=[]):
     for comment in comments:
         if comment.user.login == me or comment.user.login in exclude_users:

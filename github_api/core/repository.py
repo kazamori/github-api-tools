@@ -2,6 +2,7 @@ from ..consts import GithubState
 from ..utils import between_datetime
 from ..utils import calculate_days
 from ..utils import get_first_comment
+from ..utils import is_before_date
 from ..utils import log
 
 
@@ -111,6 +112,8 @@ class Repository:
             if not between_datetime(pr.created_at,
                                     self.args.datefrom, self.args.dateto):
                 log.debug(f'not between dates: {pr.created_at}')
+                if is_before_date(pr.created_at, self.args.datefrom):
+                    return
                 continue
 
             log.info(f'#{pr.number}: {pr.title}')
