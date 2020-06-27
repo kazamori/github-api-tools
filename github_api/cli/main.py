@@ -40,6 +40,7 @@ def parse_argument():
         datefrom=None,
         dateto=datetime.now(),
         enable_cache=True,
+        exclude_commented_user=[],
         nop=False,
         _plot=Plot.SCATTER.value,
         plot=None,
@@ -57,6 +58,11 @@ def parse_argument():
     parser.add_argument(
         '--to', action='store', dest='dateto', type=parse_dateto,
         help='filter created_at TO: e.g. 2020-04-06'
+    )
+
+    parser.add_argument(
+        '--exclude-commented-user', nargs='*', dest='exclude_commented_user',
+        help='set user not to match first commented user e.g.) bot'
     )
 
     parser.add_argument(

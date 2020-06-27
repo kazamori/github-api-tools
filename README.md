@@ -15,8 +15,9 @@ $ python setup.py develop
 Confirm `gh-cli` command show help.
 
 ```bash
-$ gh-cli --help
-usage: gh-cli [-h] [--from DATEFROM] [--to DATETO] [--disable-cache] [--nop]
+usage: gh-cli [-h] [--from DATEFROM] [--to DATETO]
+              [--exclude-commented-user [EXCLUDE_COMMENTED_USER [EXCLUDE_COMMENTED_USER ...]]]
+              [--disable-cache] [--nop]
               [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
               [--verbose] [--version] [--palette PALETTE] [--style STYLE]
               {box,scatter,violin} ...
@@ -28,6 +29,8 @@ optional arguments:
   -h, --help            show this help message and exit
   --from DATEFROM       filter created_at FROM: e.g. 2020-04-06
   --to DATETO           filter created_at TO: e.g. 2020-04-06
+  --exclude-commented-user [EXCLUDE_COMMENTED_USER [EXCLUDE_COMMENTED_USER ...]]
+                        set user not to match first commented user e.g.) bot
   --disable-cache       disable cache
   --nop                 use as a separator for option handling of positional
                         argument
