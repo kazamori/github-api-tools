@@ -73,22 +73,24 @@ $ vviewer --quoting all example/csv-files/seaborn.csv
 
 ##### line no: 1
 ------------------------------------------------------------------------
-001: additions                    : 11
-002: changed_files                : 2
-003: changes                      : 8
-004: closed_at                    : 2020-03-17 22:44:00
+001: additions                    : 44
+002: changed_files                : 3
+003: changes                      : -16
+004: closed_at                    :
 005: comments                     : 1
-006: created_at                   : 2020-03-17 22:14:39
-007: deletions                    : 3
-008: elapsed_days                 : 0.020381944444444446
-009: elapsed_days_of_first_comment: -1.0
-010: html_url                     : https://github.com/mwaskom/seaborn/pull/2000
-011: labels_                      :
-012: merged                       : True
-013: number                       : 2000
-014: reviews                      :
-015: title                        : Avoid floating point error with maximum husl sat/lum
-016: user.login                   : mwaskom
+006: review_comments              : 0
+007: reviews_length               : 0
+008: created_at                   : 2020-06-25 20:58:04
+009: deletions                    : 60
+010: elapsed_days                 : -1.0
+011: elapsed_days_of_first_comment: 0.00832175925925926
+012: html_url                     : https://github.com/mwaskom/seaborn/pull/2148
+013: labels_                      :
+014: merged                       : False
+015: number                       : 2148
+016: reviewers                    :
+017: title                        : Dont add null columns in plot_data for unassigned semantics
+018: user.login                   : mwaskom
 ------------------------------------------------------------------------
 Enter to next line, or q (quit):
 ```
