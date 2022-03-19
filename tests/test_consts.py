@@ -1,6 +1,6 @@
 import pytest
 
-from github_api.consts import Plot
+from github_api.pulls.consts import Plot
 
 
 @pytest.mark.parametrize('s,expected', [
@@ -18,9 +18,9 @@ def test_plot_from_str_exception():
 
 
 @pytest.mark.parametrize('plot,expected', [
-    (Plot.SCATTER, 'github_api.visualization.scatter_plot'),
-    (Plot.BOX, 'github_api.visualization.box_plot'),
-    (Plot.VIOLIN, 'github_api.visualization.violin_plot'),
+    (Plot.SCATTER, 'github_api.pulls.visualization.scatter_plot'),
+    (Plot.BOX, 'github_api.pulls.visualization.box_plot'),
+    (Plot.VIOLIN, 'github_api.pulls.visualization.violin_plot'),
 ])
 def test_plot_module(plot, expected):
     assert plot.module.__name__ == expected

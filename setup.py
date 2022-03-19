@@ -53,7 +53,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'gh-cli=github_api.cli.main:main',
+            'gh-cli-pulls=github_api.cli.pulls.main:main',
         ],
     },
 )

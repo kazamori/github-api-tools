@@ -6,14 +6,14 @@ from pathlib import Path
 
 from github import Github
 
-from .. import cli
-from ..consts import Plot
-from ..core.repository import Repository
-from ..core.writer import create_filename
-from ..core.writer import output_csv
-from ..utils import log
-from ..utils import parse_datetime
-from ..visualization.chart import output_chart
+from ... import cli
+from ...pulls.consts import Plot
+from ...core.repository import Repository
+from ...pulls.writer import create_filename
+from ...pulls.writer import output_csv
+from ...utils import log
+from ...utils import parse_datetime
+from ...pulls.visualization.chart import output_chart
 from .box_option import parse_box_argument
 from .scatter_option import parse_scatter_argument
 from .violin_option import parse_violin_argument
@@ -152,7 +152,7 @@ def main():
         log.setLevel(logging.DEBUG)
         log.debug(args)
 
-    from .env import TOKEN
+    from ..env import TOKEN
 
     gh = Github(TOKEN)
 
