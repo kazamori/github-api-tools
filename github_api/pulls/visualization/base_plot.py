@@ -5,7 +5,7 @@ from functools import lru_cache
 import numpy as np
 import pandas as pd
 
-from ..utils import log
+from ...utils import log
 
 _RE_REPOSITORY = re.compile(
     r'https://github\.com/(?P<org>.*?)/(?P<name>.*?)/.*')

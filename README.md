@@ -12,15 +12,26 @@ $ cd github-api-tools
 $ python setup.py develop
 ```
 
-Confirm `gh-cli` command show help.
+## Precondition to run
+
+Set Personal access tokens. You can get from https://github.com/settings/tokens .
 
 ```bash
-usage: gh-cli [-h] [--from DATEFROM] [--to DATETO]
-              [--exclude-commented-user [EXCLUDE_COMMENTED_USER [EXCLUDE_COMMENTED_USER ...]]]
-              [--disable-cache] [--nop] [--pr-id PR_ID]
-              [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
-              [--verbose] [--version] [--palette PALETTE] [--style STYLE]
-              {box,scatter,violin} ...
+$ export GITHUB_API_TOKEN="********"
+```
+
+## Pulls cli
+
+`gh-cli-pulls` command handles the [Pulls API](https://docs.github.com/en/rest/reference/pulls). Confirm it show help.
+
+```bash
+$ gh-cli-pulls --help
+usage: gh-cli-pulls [-h] [--from DATEFROM] [--to DATETO]
+                    [--exclude-commented-user [EXCLUDE_COMMENTED_USER [EXCLUDE_COMMENTED_USER ...]]]
+                    [--disable-cache] [--nop] [--pr-id PR_ID]
+                    [--repository [REPOSITORIES [REPOSITORIES ...]]]
+                    [--user USER] [--verbose] [--version] [--palette PALETTE] [--style STYLE]
+                    {box,scatter,violin} ...
 
 positional arguments:
   {box,scatter,violin}
@@ -32,8 +43,7 @@ optional arguments:
   --exclude-commented-user [EXCLUDE_COMMENTED_USER [EXCLUDE_COMMENTED_USER ...]]
                         set user not to match first commented user e.g.) bot
   --disable-cache       disable cache
-  --nop                 use as a separator for option handling of positional
-                        argument
+  --nop                 use as a separator for option handling of positional argument
   --pr-id PR_ID         set arbitrary pull request number in given repository
   --repository [REPOSITORIES [REPOSITORIES ...]]
                         set repositories
@@ -44,18 +54,12 @@ optional arguments:
   --style STYLE         set style parameter for seaborn plot
 ```
 
-## How to run
+### How to run
 
-Set Personal access tokens. You can get from https://github.com/settings/tokens .
-
-```bash
-$ export GITHUB_API_TOKEN="********"
-```
-
-Run `gh-cli` command with repository and user.
+Run `gh-cli-pulls` command with repository and user.
 
 ```bash
-$ gh-cli --repository mwaskom/seaborn --user mwaskom
+$ gh-cli-pulls --repository mwaskom/seaborn --user mwaskom
 2020-04-05 12:48:13,095 INFO Repository: seaborn
 2020-04-05 12:48:13,095 INFO           : https://github.com/mwaskom/seaborn
 2020-04-05 12:48:14,299 INFO #2010: Add optional argument showfliers for boxenplot
@@ -64,12 +68,12 @@ $ gh-cli --repository mwaskom/seaborn --user mwaskom
 ...
 ```
 
-`gh-cli` creates a CSV file as [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/csv-files/seaborn.csv) about Pull Requests created by a user.
+`gh-cli-pulls` creates a CSV file as [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/csv-files/seaborn.csv) about Pull Requests created by a user.
 
 [vviewer](https://github.com/t2y/vviewer) show values with columns every one line vertically. It's useful to check data for a quick look.
 
 ```bash
-$ vviewer --quoting all example/csv-files/seaborn.csv
+$ vviewer --quoting all example/pulls/csv-files/seaborn.csv
 
 ##### line no: 1
 ------------------------------------------------------------------------
@@ -101,16 +105,16 @@ Enter to next line, or q (quit):
 
 ### Scatter plot
 
-You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/csv-files/seaborn.csv) by default.
+You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/csv-files/seaborn.csv) by default.
 
-![](https://github.com/kazamori/github-api-tools/raw/main/example/figures/sample-seaborn-scatter-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/figures/sample-seaborn-scatter-pr-stats1.png)
 
 `scatter` is like a sub command and takes several options to customize the plot.
 
 ```bash
-$ gh-cli scatter --help
-usage: gh-cli scatter [-h] [--alpha ALPHA] [--col COL] [--col_wrap COL_WRAP]
-                      [--height HEIGHT]
+$ gh-cli-pulls scatter --help
+usage: gh-cli-pulls scatter [-h] [--alpha ALPHA] [--col COL]
+                                 [--col_wrap COL_WRAP] [--height HEIGHT]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -122,13 +126,13 @@ optional arguments:
 
 ### Box plot
 
-![](https://github.com/kazamori/github-api-tools/raw/main/example/figures/sample-box-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/figures/sample-box-pr-stats1.png)
 
 `box` is like a sub command and takes several options to customize the plot.
 
 ```bash
-$ gh-cli box --help
-usage: gh-cli box [-h] [--height HEIGHT] [--width WIDTH]
+$ gh-cli-pulls box --help
+usage: gh-cli-pulls box [-h] [--height HEIGHT] [--width WIDTH]
 
 optional arguments:
   -h, --help       show this help message and exit
@@ -138,14 +142,14 @@ optional arguments:
 
 ### Violin plot
 
-![](https://github.com/kazamori/github-api-tools/raw/main/example/figures/sample-violin-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/figures/sample-violin-pr-stats1.png)
 
 `violin` is like a sub command and takes several options to customize the plot.
 
 ```bash
-$ gh-cli violin --help
-usage: gh-cli violin [-h] [--height HEIGHT] [--inner INNER] [--loc LOC]
-                     [--width WIDTH]
+$ gh-cli-pulls violin --help
+usage: gh-cli-pulls violin [-h] [--height HEIGHT] [--inner INNER]
+                                [--loc LOC] [--width WIDTH]
 
 optional arguments:
   -h, --help       show this help message and exit

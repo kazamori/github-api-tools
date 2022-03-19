@@ -1,4 +1,4 @@
-from ..consts import Plot
+from ...pulls.consts import Plot
 
 
 def parse_box_argument(subparsers):
