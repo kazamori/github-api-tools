@@ -1,6 +1,6 @@
 # github-api-tools
 
-![](https://github.com/kazamori/github-api-tools/workflows/Python%20package/badge.svg)
+![](https://github.com/kazamori/github-api-tools/workflows/build/badge.svg)
 
 CLI tools for GitHub API
 
