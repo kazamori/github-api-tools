@@ -64,7 +64,7 @@ $ gh-cli --repository mwaskom/seaborn --user mwaskom
 ...
 ```
 
-`gh-cli` creates a CSV file as [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/master/example/csv-files/seaborn.csv) about Pull Requests created by a user.
+`gh-cli` creates a CSV file as [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/csv-files/seaborn.csv) about Pull Requests created by a user.
 
 [vviewer](https://github.com/t2y/vviewer) show values with columns every one line vertically. It's useful to check data for a quick look.
 
@@ -101,9 +101,9 @@ Enter to next line, or q (quit):
 
 ### Scatter plot
 
-You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/master/example/csv-files/seaborn.csv) by default.
+You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/csv-files/seaborn.csv) by default.
 
-![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-seaborn-scatter-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/main/example/figures/sample-seaborn-scatter-pr-stats1.png)
 
 `scatter` is like a sub command and takes several options to customize the plot.
 
@@ -122,7 +122,7 @@ optional arguments:
 
 ### Box plot
 
-![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-box-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/main/example/figures/sample-box-pr-stats1.png)
 
 `box` is like a sub command and takes several options to customize the plot.
 
@@ -138,7 +138,7 @@ optional arguments:
 
 ### Violin plot
 
-![](https://github.com/kazamori/github-api-tools/raw/master/example/figures/sample-violin-pr-stats1.png)
+![](https://github.com/kazamori/github-api-tools/raw/main/example/figures/sample-violin-pr-stats1.png)
 
 `violin` is like a sub command and takes several options to customize the plot.
 
