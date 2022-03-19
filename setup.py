@@ -40,7 +40,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'PyGithub',
-        'matplotlib==3.2.2',
+        'matplotlib',
         'numpy',
         'pandas',
         'scipy',
