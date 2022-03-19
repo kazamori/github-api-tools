@@ -8,3 +8,7 @@ if TOKEN is None:
     message += 'export GITHUB_API_TOKEN="***", '
     message += f'get from {_GITHUB_SETTING_SITE} if you do not have'
     raise RuntimeError(message)
+
+HEADERS = {
+    'Authorization': f'token {TOKEN}'
+}

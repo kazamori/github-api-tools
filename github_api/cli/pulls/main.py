@@ -1,19 +1,16 @@
-import argparse
 import logging
 import sys
-from datetime import datetime
-from pathlib import Path
 
 from github import Github
 
-from ... import cli
-from ...pulls.consts import Plot
+from ...consts import GithubAPI
 from ...core.repository import Repository
-from ...pulls.writer import create_filename
-from ...pulls.writer import output_csv
-from ...utils import log
-from ...utils import parse_datetime
+from ...pulls.consts import Plot
+from ...pulls.data import create_data
 from ...pulls.visualization.chart import output_chart
+from ...utils import log
+from ..common_option import get_common_parser
+from ..common_option import get_csv_path
 from .box_option import parse_box_argument
 from .scatter_option import parse_scatter_argument
 from .violin_option import parse_violin_argument
@@ -26,39 +23,14 @@ def has_plot_option(argv):
     return False
 
 
-def parse_dateto(s):
-    return parse_datetime(s + ' 23:59:59')
-
-
-def parse_datefrom(s):
-    return parse_datetime(s + ' 00:00:00')
-
-
 def parse_argument():
-    parser = argparse.ArgumentParser()
+    parser = get_common_parser()
     parser.set_defaults(
-        datefrom=None,
-        dateto=datetime.now(),
-        enable_cache=True,
+        api=GithubAPI.PULLS,
         exclude_commented_user=[],
-        nop=False,
         _plot=Plot.SCATTER.value,
         plot=None,
         pr_id=None,
-        repositories=[],
-        user=None,
-        verbose=False,
-        version=cli.__version__,
-    )
-
-    parser.add_argument(
-        '--from', action='store', dest='datefrom', type=parse_datefrom,
-        help='filter created_at FROM: e.g. 2020-04-06'
-    )
-
-    parser.add_argument(
-        '--to', action='store', dest='dateto', type=parse_dateto,
-        help='filter created_at TO: e.g. 2020-04-06'
     )
 
     parser.add_argument(
@@ -67,38 +39,8 @@ def parse_argument():
     )
 
     parser.add_argument(
-        '--disable-cache', action='store_false', dest='enable_cache',
-        help='disable cache'
-    )
-
-    parser.add_argument(
-        '--nop', action='store_true',
-        help='use as a separator for option handling of positional argument'
-    )
-
-    parser.add_argument(
         '--pr-id', action='store', type=int, dest='pr_id',
         help='set arbitrary pull request number in given repository'
-    )
-
-    parser.add_argument(
-        '--repository', nargs='*', dest='repositories',
-        help='set repositories'
-    )
-
-    parser.add_argument(
-        '--user', action='store',
-        help='set user to filter assignee of pull request'
-    )
-
-    parser.add_argument(
-        '--verbose', action='store_true',
-        help='set verbose mode'
-    )
-
-    parser.add_argument(
-        '--version', action='version', version=f'%(prog)s {cli.__version__}',
-        help='show version'
     )
 
     # common seaborn parameters
@@ -135,17 +77,6 @@ def show_owner_repository(gh):
             print(f' * {repo}')
 
 
-def get_csv_path(args, repo_name, gh):
-    filename = create_filename(repo_name)
-    path = Path(filename)
-    if args.enable_cache and path.exists():
-        log.info(f'use existent {path}')
-        return path
-
-    with Repository(args, gh, repo_name) as repo:
-        return output_csv(args, repo, filename)
-
-
 def main():
     args = parse_argument()
     if args.verbose:
@@ -156,7 +87,7 @@ def main():
 
     gh = Github(TOKEN)
 
-    if args.repositories is None:
+    if not args.repositories:
         show_owner_repository(gh)
         return
 
@@ -166,11 +97,12 @@ def main():
     if args.pr_id is not None:
         name = args.repositories[0]
         repo = Repository(args, gh, name)
-        repo.get_pull(args.pr_id)
+        repo.set_api_attributes()
+        repo._pulls.get_pull(args.pr_id)
         return
 
     for name in args.repositories:
-        path = get_csv_path(args, name, gh)
+        path = get_csv_path(args, name, gh, create_data)
         output_chart(args, path)
 
 

@@ -45,6 +45,7 @@ setup(
         'matplotlib',
         'numpy',
         'pandas',
+        'requests',
         'scipy',
         'seaborn',
     ],
@@ -53,6 +54,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
+            'gh-cli-actions=github_api.cli.actions.main:main',
             'gh-cli-pulls=github_api.cli.pulls.main:main',
         ],
     },

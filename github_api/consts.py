@@ -8,6 +8,16 @@ class WeekEnd(Enum):
     SUNDAY = 7
 
 
+class GithubAPI(Enum):
+    ACTIONS = 'actions'
+    PULLS = 'pulls'
+
+
+class GithubConclusion(Enum):
+    FAILURE = 'failure'
+    SUCCESS = 'success'
+
+
 class GithubFile(Enum):
     ADD = 'additions'
     DEL = 'deletions'

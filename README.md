@@ -20,6 +20,52 @@ Set Personal access tokens. You can get from https://github.com/settings/tokens 
 $ export GITHUB_API_TOKEN="********"
 ```
 
+## Actoins cli
+
+`gh-cli-actions` command handles the [Actions API](https://docs.github.com/en/rest/reference/actions). Confirm it show help.
+
+```bash
+(gh) $ gh-cli-actions --help
+usage: gh-cli-actions [-h] [--from DATEFROM] [--to DATETO]
+                      [--disable-cache] [--nop]
+                      [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
+                      [--verbose] [--version] [--show-enable-workflows]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --from DATEFROM       filter created_at FROM: e.g. 2020-04-06
+  --to DATETO           filter created_at TO: e.g. 2020-04-06
+  --disable-cache       disable cache
+  --nop                 use as a separator for option handling of positional argument
+  --repository [REPOSITORIES [REPOSITORIES ...]]
+                        set repositories
+  --user USER           set user to filter assignee of pull request
+  --verbose             set verbose mode
+  --version             show version
+  --show-enable-workflows
+                        show enable workflows
+```
+
+### How to run
+
+Run `gh-cli-actoins` command with repository.
+
+```bash
+$ gh-cli-actions --repository kazamori/github-api-tools
+2022-03-21 00:02:58,121 INFO Repository: github-api-tools
+2022-03-21 00:02:58,121 INFO           : https://github.com/kazamori/github-api-tools
+2022-03-21 00:02:59,479 INFO workflow name: build
+2022-03-21 00:02:59,479 INFO   - created at: 2022-03-19 14:21:08
+2022-03-21 00:02:59,479 INFO   - url: https://github.com/kazamori/github-api-tools/actions/runs/2008897077
+2022-03-21 00:03:00,247 INFO workflow name: pull request build
+2022-03-21 00:03:00,247 INFO   - created at: 2022-03-19 14:19:52
+2022-03-21 00:03:00,247 INFO   - url: https://github.com/kazamori/github-api-tools/actions/runs/2008893974
+...
+2022-03-21 00:03:19,013 INFO wrote data into github-api-tools-actions.csv
+```
+
+`gh-cli-actoins` command is an experimental feature now.
+
 ## Pulls cli
 
 `gh-cli-pulls` command handles the [Pulls API](https://docs.github.com/en/rest/reference/pulls). Confirm it show help.
@@ -68,12 +114,12 @@ $ gh-cli-pulls --repository mwaskom/seaborn --user mwaskom
 ...
 ```
 
-`gh-cli-pulls` creates a CSV file as [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/csv-files/seaborn.csv) about Pull Requests created by a user.
+`gh-cli-pulls` creates a CSV file as [seaborn-pulls.csv](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/csv-files/seaborn-pulls.csv) about Pull Requests created by a user.
 
 [vviewer](https://github.com/t2y/vviewer) show values with columns every one line vertically. It's useful to check data for a quick look.
 
 ```bash
-$ vviewer --quoting all example/pulls/csv-files/seaborn.csv
+$ vviewer --quoting all example/pulls/csv-files/seaborn-pulls.csv
 
 ##### line no: 1
 ------------------------------------------------------------------------
@@ -105,7 +151,7 @@ Enter to next line, or q (quit):
 
 ### Scatter plot
 
-You can see a scatter plot created by [seaborn.csv](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/csv-files/seaborn.csv) by default.
+You can see a scatter plot created by [seaborn-pulls.csv](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/csv-files/seaborn-pulls.csv) by default.
 
 ![](https://github.com/kazamori/github-api-tools/raw/main/example/pulls/figures/sample-seaborn-scatter-pr-stats1.png)
 
