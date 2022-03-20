@@ -1,6 +1,10 @@
 import logging
 from datetime import datetime
 from datetime import timedelta
+from pathlib import Path
+
+import pandas as pd
+
 
 from .consts import PACKAGE_NAME
 from .consts import WeekEnd
@@ -120,10 +124,44 @@ def calculate_days(start, end):
 
 
 def parse_datetime(s, format_='%Y-%m-%d %H:%M:%S'):
+    """
+    >>> parse_datetime('2022-03-20 23:25:24')
+    datetime.datetime(2022, 3, 20, 23, 25, 24)
+    >>> parse_datetime(  #doctest: +NORMALIZE_WHITESPACE
+    ...     '2022-03-20T23:25:24.000+09:00',
+    ...     '%Y-%m-%dT%H:%M:%S.000%z')
+    datetime.datetime(2022, 3, 20, 23, 25, 24,
+    tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
+    """
     return datetime.strptime(s, format_)
 
 
 def between_datetime(dt, fromdate, todate):
+    """
+    >>> from datetime import datetime
+    >>> fromdate = datetime(2022, 3, 10)
+    >>> todate = datetime(2022, 3, 20)
+    >>> between_datetime(fromdate, fromdate, todate)
+    True
+    >>> between_datetime(todate, fromdate, todate)
+    True
+    >>> between_datetime(datetime(2022, 3, 12), fromdate, todate)
+    True
+    >>> between_datetime(datetime(2022, 3, 12), fromdate, None)
+    True
+    >>> between_datetime(datetime(2022, 3, 9), None, None)
+    True
+    >>> between_datetime(datetime(2022, 3, 9), None, todate)
+    True
+    >>> between_datetime(datetime(2022, 3, 9), fromdate, todate)
+    False
+    >>> between_datetime(datetime(2022, 3, 9), fromdate, None)
+    False
+    >>> between_datetime(datetime(2022, 3, 21), fromdate, todate)
+    False
+    >>> between_datetime(datetime(2022, 3, 21), None, todate)
+    False
+    """
     if fromdate is None:
         if todate is None:
             return True
@@ -137,18 +175,38 @@ def between_datetime(dt, fromdate, todate):
 
 
 def is_before_date(dt, fromdate):
+    """
+    >>> from datetime import datetime
+    >>> fromdate = datetime(2022, 3, 10)
+    >>> is_before_date(datetime(2022, 3, 9), fromdate)
+    True
+    >>> is_before_date(datetime(2022, 3, 10), fromdate)
+    False
+    >>> is_before_date(datetime(2022, 3, 10), None)
+    False
+    """
     if fromdate is None:
         return False
     return dt < fromdate
 
 
-def get_first_comment(comments, me, exclude_users=[]):
-    for comment in comments:
-        if comment.user.login == me or comment.user.login in exclude_users:
-            continue
-        if hasattr(comment, 'submitted_at'):
-            # FIXME: PullRequestReview is different from
-            #        IssueComment/PullRequestComment
-            comment.created_at = comment.submitted_at
-        return comment
-    return None
+def create_filename(owner_repo, api):
+    """
+    >>> from .consts import GithubAPI
+    >>> owner_repo = 'kazamori/github-api-tools'
+    >>> create_filename(owner_repo, GithubAPI.ACTIONS)
+    'github-api-tools-actions.csv'
+    >>> create_filename(owner_repo, GithubAPI.PULLS)
+    'github-api-tools-pulls.csv'
+    """
+    repo_name = owner_repo.split('/')[-1]
+    api_name = api.value
+    return f'{repo_name}-{api_name}.csv'
+
+
+def output_csv(args, data, filename):
+    df = pd.DataFrame(data)
+    df.to_csv(filename, index=False, columns=data.keys())
+    path = Path(filename)
+    log.info(f'wrote data into {path}')
+    return path
