@@ -1,4 +1,5 @@
 from datetime import timedelta
+from functools import lru_cache
 
 import requests
 
@@ -11,7 +12,21 @@ from ..utils import parse_datetime
 
 
 class ActionInfo:
-    pass  # TODO: think about responsibility later
+
+    @property
+    @lru_cache(1)
+    def duration_seconds(self):
+        return self.duration_time.total_seconds()
+
+    @property
+    @lru_cache(1)
+    def total_billable_seconds(self):
+        return self.total_billable_time.total_seconds()
+
+    @property
+    @lru_cache(1)
+    def total_execution_seconds(self):
+        return self.total_execution_time.total_seconds()
 
 
 class ActionsAttribute:
@@ -94,15 +109,11 @@ class ActionsAttribute:
 
             info = ActionInfo()
             info.created_at = run.created_at
-            info.duration_seconds = run_timing['duration_time'].total_seconds()
             info.duration_time = run_timing['duration_time']
             info.html_url = run.html_url
             info.id = run.id
             info.jobs = jobs
-            info.total_billable_seconds = \
-                run_timing['total_billable_time'].total_seconds()
             info.total_billable_time = run_timing['total_billable_time']
-            info.total_execution_seconds = total_execution_time.total_seconds()
             info.total_execution_time = total_execution_time
             info.updated_at = run.updated_at
             info.workflow_name = workflow.name
