@@ -94,6 +94,10 @@ class ActionsAttribute:
                 continue
 
             workflow = self.repo.get_workflow(run.workflow_id)
+            if (self.args.workflow_path is not None
+                    and self.args.workflow_path != workflow.path):
+                continue
+
             total_execution_time = timedelta()
             jobs = []
             for job in self.get_workflow_jobs(run.jobs_url):

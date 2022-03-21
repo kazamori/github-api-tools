@@ -25,11 +25,12 @@ $ export GITHUB_API_TOKEN="********"
 `gh-cli-actions` command handles the [Actions API](https://docs.github.com/en/rest/reference/actions). Confirm it show help.
 
 ```bash
-(gh) $ gh-cli-actions --help
+$ gh-cli-actions --help
 usage: gh-cli-actions [-h] [--from DATEFROM] [--to DATETO]
                       [--disable-cache] [--nop]
                       [--repository [REPOSITORIES [REPOSITORIES ...]]] [--user USER]
                       [--verbose] [--version] [--show-enable-workflows]
+                      [--workflow-path WORKFLOW_PATH]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -44,6 +45,8 @@ optional arguments:
   --version             show version
   --show-enable-workflows
                         show enable workflows
+  --workflow-path WORKFLOW_PATH
+                        filter any workflow path
 ```
 
 ### How to run

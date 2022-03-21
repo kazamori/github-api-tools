@@ -16,11 +16,17 @@ def parse_argument():
     parser.set_defaults(
         api=GithubAPI.ACTIONS,
         show_workflows=False,
+        workflow_path=None,
     )
 
     parser.add_argument(
         '--show-enable-workflows', action='store_true', dest='show_workflows',
         help='show enable workflows'
+    )
+
+    parser.add_argument(
+        '--workflow-path', action='store', dest='workflow_path',
+        help='filter any workflow path'
     )
 
     argv = sys.argv[1:]
