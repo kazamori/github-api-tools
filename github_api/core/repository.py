@@ -1,6 +1,7 @@
 from ..consts import GithubAPI
 from ..utils import log
 from .repository_actions import ActionsAttribute
+from .repository_issues import IssuesAttribute
 from .repository_pulls import PullsAttribute
 
 
@@ -12,6 +13,7 @@ class Repository:
         self.name = name
         # extra attributes
         self.actions = []
+        self.issues = []
         self.pulls = []
 
     def __enter__(self):
@@ -32,6 +34,8 @@ class Repository:
             repo = self._get_repo()
         if self.args.api == GithubAPI.ACTIONS:
             self._actions = ActionsAttribute(self.args, self.gh, repo)
+        elif self.args.api == GithubAPI.ISSUES:
+            self._issues = IssuesAttribute(self.args, self.gh, repo)
         elif self.args.api == GithubAPI.PULLS:
             self._pulls = PullsAttribute(self.args, self.gh, repo)
         else:
@@ -41,6 +45,8 @@ class Repository:
         self.set_api_attributes(repo)
         if self.args.api == GithubAPI.ACTIONS:
             self.actions = list(self._actions.get_actions())
+        elif self.args.api == GithubAPI.ISSUES:
+            self.issues = list(self._issues.get_issues())
         elif self.args.api == GithubAPI.PULLS:
             self.pulls = list(self._pulls.get_pulls())
         else:

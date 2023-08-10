@@ -1,3 +1,4 @@
+import json
 import logging
 from datetime import datetime
 from datetime import timedelta
@@ -202,6 +203,16 @@ def create_filename(owner_repo, api):
 def output_csv(args, data, filename):
     df = pd.DataFrame(data)
     df.to_csv(filename, index=False, columns=data.keys())
+    path = Path(filename)
+    log.info(f'wrote data into {path}')
+    return path
+
+
+def output_json(args, data, filename):
+    with open(filename, mode='w') as out:
+        for entry in data:
+            json.dump(entry, out, default=str)
+            out.write('\n')
     path = Path(filename)
     log.info(f'wrote data into {path}')
     return path

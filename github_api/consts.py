@@ -10,6 +10,7 @@ class WeekEnd(Enum):
 
 class GithubAPI(Enum):
     ACTIONS = 'actions'
+    ISSUES = 'issues'
     PULLS = 'pulls'
 
 
