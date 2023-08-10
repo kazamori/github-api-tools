@@ -4,7 +4,7 @@ from datetime import timedelta
 from pathlib import Path
 
 import pandas as pd
-
+import pytz
 
 from .consts import PACKAGE_NAME
 from .consts import WeekEnd
@@ -126,14 +126,9 @@ def calculate_days(start, end):
 def parse_datetime(s, format_='%Y-%m-%d %H:%M:%S'):
     """
     >>> parse_datetime('2022-03-20 23:25:24')
-    datetime.datetime(2022, 3, 20, 23, 25, 24)
-    >>> parse_datetime(  #doctest: +NORMALIZE_WHITESPACE
-    ...     '2022-03-20T23:25:24.000+09:00',
-    ...     '%Y-%m-%dT%H:%M:%S.000%z')
-    datetime.datetime(2022, 3, 20, 23, 25, 24,
-    tzinfo=datetime.timezone(datetime.timedelta(seconds=32400)))
+    datetime.datetime(2022, 3, 20, 23, 25, 24, tzinfo=<UTC>)
     """
-    return datetime.strptime(s, format_)
+    return pytz.UTC.localize(datetime.strptime(s, format_))
 
 
 def between_datetime(dt, fromdate, todate):

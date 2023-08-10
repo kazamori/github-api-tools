@@ -45,12 +45,16 @@ setup(
         'matplotlib',
         'numpy',
         'pandas',
+        'pytz',
         'requests',
         'scipy',
         'seaborn',
     ],
     tests_require=[
-        'tox', 'pytest', 'pytest-flake8',
+        'flake8==4.0.1',
+        'pytest',
+        'pytest-flake8',
+        'tox',
     ],
     entry_points={
         'console_scripts': [

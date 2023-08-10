@@ -2,6 +2,8 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
+import pytz
+
 from .. import cli
 from ..core.repository import Repository
 from ..utils import create_filename
@@ -22,7 +24,7 @@ def get_common_parser():
     parser = argparse.ArgumentParser()
     parser.set_defaults(
         datefrom=None,
-        dateto=datetime.now(),
+        dateto=pytz.UTC.localize(datetime.now()),
         enable_cache=True,
         nop=False,
         repositories=[],

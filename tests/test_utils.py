@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import pytest
+import pytz
 
 from github_api.utils import calculate_days
 from github_api.utils import is_weekend
@@ -48,8 +49,10 @@ def test_calculate_days(start, end, expected):
 
 
 @pytest.mark.parametrize('s,format_,expected', [
-    ('2020-04-06 08:50:30', None, datetime(2020, 4, 6, 8, 50, 30)),
-    ('20200406', '%Y%m%d', datetime(2020, 4, 6, 0, 0, 0)),
+    ('2020-04-06 08:50:30', None,
+     pytz.UTC.localize(datetime(2020, 4, 6, 8, 50, 30))),
+    ('20200406', '%Y%m%d',
+     pytz.UTC.localize(datetime(2020, 4, 6, 0, 0, 0))),
 ])
 def test_parse_datetime(s, format_, expected):
     if format_ is None:
