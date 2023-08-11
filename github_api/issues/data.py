@@ -4,8 +4,10 @@ from operator import attrgetter
 
 def get_comments_data(comments):
     comment_item = {
-        'created_at': None,
         'body': None,
+        'created_at': None,
+        'html_url': None,
+        'id': None,
         'user.login': None,
     }
     columns = comment_item.keys()
