@@ -1,3 +1,4 @@
+from copy import deepcopy
 from operator import attrgetter
 
 
@@ -9,10 +10,11 @@ def get_comments_data(comments):
     }
     columns = comment_item.keys()
     for comment in comments:
+        d = deepcopy(comment_item)
         data = zip(columns, attrgetter(*columns)(comment))
         for column, value in data:
-            comment_item[column] = value
-        yield comment_item
+            d[column] = value
+        yield d
 
 
 def create_data(repo):
