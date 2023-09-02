@@ -1,5 +1,6 @@
 from github.GithubObject import NotSet
 
+from ..consts import GithubState
 from ..utils import log
 
 
@@ -19,7 +20,8 @@ class IssuesAttribute:
 
     def get_issues(self):
         since = NotSet if self.args.datefrom is None else self.args.datefrom
-        for issue in self.repo.get_issues(since=since):
+        for issue in self.repo.get_issues(state=GithubState.ALL.value,
+                                          since=since):
             log.info(f'#{issue.number}: {issue.title} '
                      f'comments ({issue.comments})')
             self.set_issue_comments(issue)
