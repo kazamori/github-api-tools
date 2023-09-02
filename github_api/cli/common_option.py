@@ -60,7 +60,7 @@ def get_common_parser():
 
     parser.add_argument(
         '--user', action='store',
-        help='set user to filter assignee of pull request'
+        help='set user to filter assignee of pull request/issue'
     )
 
     parser.add_argument(

@@ -20,8 +20,10 @@ class IssuesAttribute:
 
     def get_issues(self):
         since = NotSet if self.args.datefrom is None else self.args.datefrom
-        for issue in self.repo.get_issues(state=GithubState.ALL.value,
-                                          since=since):
+        assignee = NotSet if self.args.user is None else self.args.user
+        for issue in self.repo.get_issues(assignee=assignee,
+                                          since=since,
+                                          state=GithubState.ALL.value):
             log.info(f'#{issue.number}: {issue.title} '
                      f'comments ({issue.comments})')
             self.set_issue_comments(issue)
